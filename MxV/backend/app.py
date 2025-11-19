@@ -1,7 +1,12 @@
-from flask_wtf import FlaskForm
-from wtforms import (
-	StringField,
-	PasswordField,
-	SubmitField,
-	EmailField
-)
+from flask import Flask
+
+from routes import register_routes
+
+
+app = Flask(__name__)
+app.secret_key = "SHHH"
+
+register_routes(app)
+
+if __name__ == "__main__":
+	app.run(debug=True)

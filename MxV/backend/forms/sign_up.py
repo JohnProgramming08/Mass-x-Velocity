@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import DataRequired, Length
 
 
-class LoginForm(FlaskForm):
+class SignUpForm(FlaskForm):
     email = EmailField(
         "Email", render_kw={"placeholder": "Email"}, validators=[DataRequired()]
     )
@@ -13,3 +13,4 @@ class LoginForm(FlaskForm):
         validators=[DataRequired(), Length(min=5, max=25)],
     )
     log_in = SubmitField("Log in")
+    
