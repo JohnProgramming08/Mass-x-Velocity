@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<body>
+	<!-- Header -->
+	<header>
+		<div class="header-div">
+			<img id="mxvlogo" src="{{url_for('static', filename='images/MxVlogo.png')}}" alt="MxV logo." title="Mass x Velocity">
+			<a href="mailto:dylan08code@gmail.com" target="_blank">Contact Us</a>
+		</div>
+		<div class="header-div">
+			<a href="/join/signup">Sign Up</a>
+			<a href="/join/login">Log In</a>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<main>
+		<div id="intro-div">
+			<div class="text" id="intro-text">
+				<h1>Accelerate Your Learning!</h1>
+				<p>Interactive physics revision designed to build confidence.</p>
+			</div>
+			<i id="intro-image" class="fa-solid fa-atom" aria-hidden="true"></i>
+		</div>
+		
+		<div id="card-div">
+			<div class="card ">
+				<i class="fa-solid fa-landmark card-image" aria-hidden="true"></i>
+				<div class="text">
+					<h3>Topic Coverage</h3>
+					<p>GCSE, AS, A Level</p>
+				</div>
+			</div>
+
+			<div class="card">
+				<i class="fa-solid fa-puzzle-piece card-image" aria-hidden="true"></i>
+				<div class="text">
+					<h3>Worked Solutions</h3>
+					<p>To all of our man-made questions</p>
+				</div>
+			</div>
+
+			<div class="card">
+				<i class="fa-solid fa-trophy card-image" aria-hidden="true"></i>
+				<div class="text">
+					<h3>Leaderboards</h3>
+					<p>That keep you engaged</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="card" id="dylan-bio">
+			<h2>Built for physics students, by a physics student!</h2>
+			<div id="dylan-div">
+				<img id="dylan-gif" src="{{url_for('static', filename='videos/dylan.gif')}}">
+				<p>My name is Dylan Scully and I created Mass x Velocity so that students, who struggle with accessing higher level maths based questions can build the confidence required to solve them.</p>
+			</div>
+		</div>
+	</main>
+</body>
+{% endblock %}
