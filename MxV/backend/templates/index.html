@@ -56,12 +56,13 @@
 		</div>
 
 		<div class="card" id="dylan-bio">
-			<h2>Built for physics students, by a physics student!</h2>
+			<h2 id="dylan-title">Built for physics students, by a physics student!</h2>
 			<div id="dylan-div">
 				<img id="dylan-gif" src="{{url_for('static', filename='videos/dylan.gif')}}">
 				<p>My name is Dylan Scully and I created Mass x Velocity so that students, who struggle with accessing higher level maths based questions can build the confidence required to solve them.</p>
 			</div>
 		</div>
 	</main>
+	<script src="{{ url_for('static', filename='js/index.js')}}"></script>
 </body>
 {% endblock %}

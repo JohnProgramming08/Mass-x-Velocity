@@ -127,3 +127,38 @@ input[type="radio"] {
 .flip {
 	transform: rotate(180deg);
 }
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	html {
+		font-size: 100%;
+	}
+
+	body {
+		font-size: clamp(14px, 3.2vw, 16px);
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	
+	h1 {
+		font-size: clamp(20px, 6vw, 28px);
+		line-height:1.2;
+	}
+
+	h2 {
+		font-size: clamp(18px, 4.5vw, 22px);
+		line-height:1.25;
+	}
+	
+	h3, header a {
+		font-size: clamp(16px, 3.2vw, 18px);
+		line-height:1.3;
+	}
+
+	button, input, select, textarea {
+		font-size: clamp(15px, 2.5vw, 16px); 
+		min-height: 44px; 
+	}
+}

@@ -74,6 +74,7 @@ main {
 	color: var(--icon-color);
 }
 
+/* Dylan Bio Styles */
 #dylan-bio {
 	margin-top: 10vh;
 	width: 60%;
@@ -94,4 +95,79 @@ main {
 	width: 60%;
 	margin-right: 10px;
 	border-radius: 10px;
+}
+
+#dylan-title {
+	text-align: center;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	/* Header Styles */
+	header, #mxvlogo {
+		height: 5vh;
+	}
+
+	/* Intro Div Styles */
+	#intro-div, #dylan-bio {
+		margin-top: 0px;
+	}
+
+	#intro-div {
+		width: 95%;
+	}
+
+	#intro-image {
+		font-size: 150px;
+	}
+
+	#intro-text {
+		margin-top: 0px;
+	}
+
+	/* Card Div Styles */
+	#card-div {
+        display: flex;
+        gap: 1rem;
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;		
+	}
+
+	#card-div .card {
+        flex: 0 0 70%;
+        scroll-snap-align: center;
+        margin-right: 0.5rem; 
+        min-width: 0;            
+    }
+
+	#card-div .card:first-child {
+		margin-left: 15%;
+	}
+
+	#card-div .card:last-child {
+		margin-right: 15%;
+	}
+
+    #card-div::-webkit-scrollbar { 
+		display: none;
+	}
+
+    #card-div { 
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	/* Dylan Bio Styles */
+	#dylan-bio {
+		width: 90%;
+	}
+
+	#dylan-div {
+		flex-direction: column;
+	}
+
+	#dylan-gif {
+		width: 100%;
+	}
 }
