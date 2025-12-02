@@ -3,28 +3,6 @@
 	--icon-color: #38B6FF;
 }
 
-/* Header Styles */
-header {
-	width: 100%;
-	height: 10vh;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.header-div {
-	display: flex;
-	align-items: center;
-}
-
-.header-div * {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-#mxvlogo {
-	height: 10vh;
-}
-
 /* Main Content Styles */
 main {
 	padding-top: 10vh;

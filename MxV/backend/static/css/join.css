@@ -1,0 +1,107 @@
+:root {
+	--icon-color: #38B6FF;
+	--secondary: #C0C0C0;
+	--button: #018493; 
+}
+
+/* Global Styles */
+html, body {
+	overflow-x: hidden;
+}
+
+main {
+	width: 200vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+}
+
+/* Graphics Div Styles */
+.graphics-div {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 50vw;
+}
+
+.icon {
+	font-size: 300px;
+	color: var(--icon-color);
+	margin-top: 40px;
+}
+
+/* Form Div Styles */
+#form-div {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100vw;
+	height: calc(90vh - 2px);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50vw;
+	position: relative;
+}
+
+form h1 {
+	margin-bottom: 5%; 
+}
+
+.input-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form input {
+	margin-bottom: 4%;
+	width: 20vw;
+}
+
+input[type='submit'] {
+	height: 10vh;
+	margin-top: 10%;
+}
+
+/* Sign Up Form Styles */
+#log-in-btn, #sign-up-btn {
+    --notch: 2rem;
+    background: var(--button);
+    color: var(--primary);
+	border: none;
+    width: 15vw;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, calc(100% - var(--notch)) 50%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, calc(100% - var(--notch)) 50%, 100% 100%, 0 100%);
+    transition: transform .15s ease, filter .15s ease;
+	position: relative;
+	margin-top: 30px;
+	left: -20vw;
+}
+
+#log-in-btn:hover {
+    transform: translateX(-5px);
+    filter: brightness(1.05);
+}
+
+
+/* Log In Form Styles */
+#sign-up-btn {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, var(--notch) 50%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, var(--notch) 50%);
+	left: auto;
+	right: -20vw;
+}
+
+#sign-up-btn:hover {
+	transform: translateX(5px);
+	filter: brightness(1.05);
+}

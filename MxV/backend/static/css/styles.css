@@ -47,7 +47,7 @@ header a:hover {
 }
 
 /* Font Styles */
-h1, h2, h3, button, header a, .dropdown {
+h1, h2, h3, button, header a, .dropdown, input[type="submit"] {
 	font-family: 'Poppins', system-ui, sans-serif;
 	font-size: 32px;
 	color: var(--primary);
@@ -57,7 +57,7 @@ h2 {
 	font-size: 28px;
 }
 
-h3, button, header a, .dropdown {
+h3, button, header a, .dropdown, input[type="submit"] {
 	font-size: 24px;
 }
 
@@ -82,20 +82,22 @@ h4 {
 /* Input Styles */
 input[type='submit'] {
 	background-color: var(--button);
-	transition: 0.3s ease-in-out;
-	padding: 20px;
-	border-radius: 30%;
+	transition: 0.2s ease-in-out;
+	border-radius: 9999px;
+	border: none;
 }
 
 input[type='submit']:hover {
 	background-color: var(--border);
 	font-weight: bold;
+	cursor: pointer;
 }
 
 input[type='text'], input[type='password'], input[type='email'] {
 	background-color: var(--input);
 	border-radius: 10px;
 	padding: 10px;
+	border: none;
 }
 
 input[type='text']:focus, input[type='password']:focus, input[type='email']:focus {

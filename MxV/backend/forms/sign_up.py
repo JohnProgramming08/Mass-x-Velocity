@@ -12,5 +12,5 @@ class SignUpForm(FlaskForm):
         render_kw={"placeholder": "Password"},
         validators=[DataRequired(), Length(min=5, max=25)],
     )
-    log_in = SubmitField("Log in")
+    sign_up = SubmitField("Sign up")
     

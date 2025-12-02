@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+	<header>
+		<div class="header-div">
+			<img id="mxvlogo" src="{{url_for('static', filename='images/MxVlogo.png')}}" alt="MxV logo." title="Mass x Velocity">
+			<a href="mailto:dylan08code@gmail.com" target="_blank">Contact Us</a>
+		</div>
+		<div class="header-div">
+			<a href="/join/signup" target="_blank">Sign Up</a>
+			<a href="/join/login" target="_blank">Log In</a>
+		</div>
+	</header>
+	{% block main %}{% endblock %}
+{% endblock %}
+</body>

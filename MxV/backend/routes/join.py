@@ -3,7 +3,7 @@ from forms import LogInForm, SignUpForm
 from services import Join
 
 
-join_bp = Blueprint("main", __name__)
+join_bp = Blueprint("join", __name__)
 
 @join_bp.route("/join/<clicked>", methods=["GET", "POST"])
 def join(clicked):
