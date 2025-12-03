@@ -17,13 +17,20 @@ main {
 }
 
 /* Graphics Div Styles */
-.graphics-div {
+.graphics-div, .mobile-graphics-div {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	width: 50vw;
+}
+
+.mobile-graphics-div {
+	display: none;
+	width: 100vw;
+	height: auto;
+	margin-top: 5vh;
 }
 
 .icon {
@@ -104,4 +111,67 @@ input[type='submit'] {
 #sign-up-btn:hover {
 	transform: translateX(5px);
 	filter: brightness(1.05);
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	/* Header Styles */
+	header, #mxvlogo {
+		height: 5vh;
+	}
+
+	/* Form Div Styles */
+	.graphics-div {
+		display: none;
+	}
+
+	.mobile-graphics-div {
+		display: flex;
+	}
+
+	.icon {
+		font-size: 200px;
+	}
+
+	#form-div {
+		width: 200vw;
+	}
+
+	form {
+		width: 100vw;
+	}
+
+	form input {
+		width: 60vw;
+	}
+
+	form input[type="submit"] {
+		height: 6vh;
+	}
+	
+	/* Sign Up Form Styles */
+	#log-in-btn {
+		width: 30vw;
+		clip-path: polygon(0 0, calc(100% - var(--notch)) 0, 100% 50%, calc(100% - var(--notch)) 100%, 0 100%);
+		-webkit-clip-path: polygon(0 0, calc(100% - var(--notch)) 0, 100% 50%, calc(100% - var(--notch)) 100%, 0 100%);
+		padding-left: 1rem;
+		padding-right: calc(1rem + var(--notch));
+	}
+
+	#log-in-btn:hover {
+		transform: translateX(5px);
+	}
+
+	/* Log In Form Styles */
+	#sign-up-btn {
+		width: 30vw;
+		clip-path: polygon(var(--notch) 0, 100% 0, 100% 100%, var(--notch) 100%, 0 50%);
+		-webkit-clip-path: polygon(var(--notch) 0, 100% 0, 100% 100%, var(--notch) 100%, 0 50%);
+		padding-left: calc(1rem + var(--notch));
+		overflow: visible;
+	}
+
+	#sign-up-btn:hover {
+		transform: translateX(-5px);
+	}
 }
