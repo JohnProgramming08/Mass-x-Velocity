@@ -14,7 +14,7 @@ class User(db.Model):
 	join_date = db.Column(db.DateTime, default=datetime.now)
 
 	# Related tables
-	stats = db.relationship("stats", uselist=False, back_populates="user", cascade="all, delete-orphan")
+	stats = db.relationship("Stats", uselist=False, back_populates="user", cascade="all, delete-orphan")
 
 
 # Create stats table (composite relationship with users)
@@ -31,7 +31,7 @@ class Stats(db.Model):
 
 	# Related tables
 	user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), primary_key=True)
-	user = db.relationship("users", back_populates="stats")
+	user = db.relationship("User", back_populates="stats")
 
 
 # Create questions table (composite relationship with topic_questions)
@@ -48,7 +48,7 @@ class Question(db.Model):
 	difficulty = db.Column(db.String(2), nullable=False)
 
 	# Related tables
-	topic_questions = db.relationship("topic_questions", back_populates="question", cascade="all, delete-orphan")
+	topic_questions = db.relationship("TopicQuestion", back_populates="question", cascade="all, delete-orphan")
 
 # Create topic_questions table
 class TopicQuestion(db.Model):
@@ -57,6 +57,6 @@ class TopicQuestion(db.Model):
 
 	# Related tables
 	question_id = db.Column(db.Integer, db.ForeignKey("questions.question_id"), primary_key=True)
-	question = db.relationship("questions", back_populates="topic_questions")
+	question = db.relationship("Question", back_populates="topic_questions")
 
 

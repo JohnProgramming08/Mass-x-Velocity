@@ -10,6 +10,7 @@
 	--primary: #F5F5F5;
 	--secondary: #C0C0C0;
 	--input: #1C2028;
+	--error: #b71c1c;
 }
 
 /* Global Styles */
@@ -69,6 +70,10 @@ p, h4, input[type='email'], input[type='password'], input[type='text'] {
 
 h4 {
 	font-weight: bold;
+}
+
+.error {
+	color: var(--error);
 }
 
 /* Card Styles */

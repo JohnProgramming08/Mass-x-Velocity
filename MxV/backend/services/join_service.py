@@ -5,8 +5,8 @@ from database import Select, Insert
 class Join:
 	def __init__(self, form):
 		# Create user details
-		self.password = form.password
-		self.email = form.email
+		self.password = form.password.data
+		self.email = form.email.data
 		self.username = self.email[0:5]
 		self.bio = "Sorry, this feature is still in development!"
 		
@@ -44,6 +44,7 @@ class Join:
 			return self.error_message(self.password_hash)
 		
 		# Successful
+		print("Signup Successful")
 		id = Insert.insert_user(self.username, self.email, self.password_hash, self.bio)
 		return id
 	
@@ -56,8 +57,9 @@ class Join:
 		
 		# Get id
 		user_id = Select.get_id(self.email, self.password_hash)
-
-		if user_id is None:
+		
+		print(user_id)
+		if user_id is False:
 			return self.error_message("incorrect")
 		else:
 			return user_id

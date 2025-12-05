@@ -20,6 +20,7 @@
 		<form action="/join/{{ clicked }}" method="post" id="signup_form">
 			{{ sign_up_form.hidden_tag() }}
 			<h1>Welcome!</h1>
+			<p class="error">{{ sign_up_error }}</p>
 			<div class="input-div">
 				{{ sign_up_form.email() }}
 				{{ sign_up_form.password() }}
@@ -37,6 +38,7 @@
 		<form action="/join/{{ clicked }}" method="post" id="login_form">
 			{{ log_in_form.hidden_tag() }}
 			<h1>Welcome Back!</h1>
+			<p class="error">{{ log_in_error }}</p>
 			<div class="input-div">
 				{{ log_in_form.email() }}
 				{{ log_in_form.password() }}
