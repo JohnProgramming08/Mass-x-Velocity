@@ -29,10 +29,6 @@ def join(clicked):
 	else:
 		logic = Join(log_in_form)
 		id = logic.login()
-		print("-----------------")
-		print("User is logging in")
-		print(id)
-		print("---------------")
 		if type(id) is not int:
 			return render_template("join.html", clicked=clicked, sign_up_form=sign_up_form, log_in_form=log_in_form, log_in_error=id, sign_up_error="")
 
