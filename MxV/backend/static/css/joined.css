@@ -1,0 +1,29 @@
+/* Header Styles */
+header {
+	justify-content: flex-start;
+}
+
+header a {
+	font-size: 70px;
+}
+
+/* Logo Div Styles */
+#logo-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+#MxV-logo {
+	width: 100%;
+}
+
+/* Nav Div Styles */
+#nav-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+

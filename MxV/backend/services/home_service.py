@@ -5,12 +5,16 @@ class Home:
 		self.id = user_id
 
 	# Return a dictionary of the users question data
-	def question_data(self):
-		answers = Select.get_answer_data()
-		accuracy = int(((answers.total - answers.wrong) / answers.total) * 100)
+	def answer_data(self):
+		answers = Select.get_answer_data(self.id)
+		# Avoid zero error
+		if answers["total"] != 0:
+			accuracy = int(((answers["total"] - answers["wrong"]) / answers["total"]) * 100)
+		else:
+			accuracy = 0
 
 		return {
-			"total": answers.total,
+			"total": answers["total"],
 			"accuracy": accuracy
 		}
 
@@ -28,7 +32,10 @@ class Home:
 	
 	# Convert a given value to a percentage of the whole
 	def to_percent(self, data, total):
-		return 100 * (data / total)
+		if total != 0:
+			return 100 * (data / total)
+		else:
+			return 0
 	
 	# Return the users general data
 	def user_data(self):

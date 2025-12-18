@@ -29,7 +29,7 @@ html, body {
 /* Header Styles */
 header {
 	background-color: black;
-	width: 5vw;
+	width: 10vw;
 	height: 100vh;
 	position: fixed;
 	display: flex;
@@ -133,6 +133,19 @@ input[type="radio"] {
 
 .flip {
 	transform: rotate(180deg);
+}
+
+/* Bars */
+.vertical-bar {
+	width: 2px;
+	height: 90%;
+	background-color: var(--border);
+}
+
+.horizontal-bar {
+	width: 90%;
+	height: 2px;
+	background-color: var(--border);
 }
 
 /* Mobile Styles */

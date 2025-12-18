@@ -9,7 +9,7 @@ class User(db.Model):
 	user_id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(10), nullable=False, unique=True)
 	email = db.Column(db.String(254), nullable=False, unique=True)
-	password_hash = db.Column(db.Integer, unique=True)
+	password_hash = db.Column(db.Integer)
 	bio = db.Column(db.String(200), nullable=False)
 	join_date = db.Column(db.DateTime, default=datetime.now)
 

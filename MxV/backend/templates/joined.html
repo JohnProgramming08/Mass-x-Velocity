@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/joined.css') }}">
+{% block style2 %}{% endblock %}
+{% endblock %}
+
+{% block content %}
+<body>
+	<header>
+		<!-- MxV Logo -->
+		<div id="logo-div">
+			<img id="MxV-logo" src="{{ url_for('static', filename='images/MxVlogo.png')}}" alt="MxV logo." title="Mass x Velocity">
+			<div class="horizontal-bar"></div>
+		</div>
+		
+		<!-- Page Navigation -->
+		<div id="nav-div">
+			<a href="mailto:dylan08code@gmail.com" target="_blank"><i class="fa-solid fa-envelope" id="mail"></i></a>			
+			<a href="/home/{{ id }}"><i class="fa-solid fa-user" id="home"></i></a>
+			<a href="/select-topics/{{ id }}"><i class="fa-solid fa-book" id="topics"></i></a>
+		</div>
+	</header>
+	{% block main %}{% endblock %}
+{% endblock %}
+</body>

@@ -1,0 +1,119 @@
+/* Global Styles */
+:root {
+	--bar: #0B0E14;
+	--bar-border: #F5F5F5;
+	--bar-fg: #38B6FF;
+	--selected-fg: #018493;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 90vw;
+	height: 100vh;
+	margin-left: 10vw;
+}
+
+/* Header Styles */
+#home {
+	color: var(--selected-fg);
+}
+
+#home:hover {
+	color: var(--selected-fg);
+}
+
+/* Top and Bottom Div Styles */
+#top-div, #bottom-div {
+	width: 90%;
+	display: flex;
+}
+
+#top-div {
+	margin-bottom: 20px;
+	height: 20vh;
+	align-items: center;
+}
+
+#bottom-div {
+	height: 70vh;
+	justify-content: space-between;
+}
+
+/* Top Div Styles */
+#profile-div {
+	display: flex;
+	align-items: center;
+	width: 20vw;
+}
+
+#profile-picture {
+	width: 15vh;
+	height: 15vh;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+#profile-details-div {
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	margin-right: 10px;
+}
+
+#username {
+	margin-bottom: 10px;
+}
+
+#bio {
+	margin-left: 10px;
+	height: 90%;
+}
+
+/* Bottom Div Styles */
+#momentum-div, #stats-div {
+	width: 50%;
+	height: 95%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bar-div {
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+.bar-container {
+	background-color: var(--bar);
+	border: 2px solid var(--bar-border);
+	width: 80%;
+	border-radius: 9999px;
+	height: 5vh;
+	margin-top: 2px;
+}
+
+.bar {
+	height: 100%;
+	background-color: var(--bar-fg);
+	border-radius: 9999px;
+}
+
+#stats-div {
+	width: 30%;
+	height: 35%;
+}
+
+#stats-display-div {
+	display: flex;
+}
+
+#stat-type-div {
+	margin-right: 10px;
+}
+
+.row1 {
+	margin-bottom: 10px;
+}

@@ -36,4 +36,4 @@ def join(clicked):
 		success = True
 
 	if success:
-		return redirect(url_for("home"))
+		return redirect(url_for("home.home", id=id))
