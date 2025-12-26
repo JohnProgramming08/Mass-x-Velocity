@@ -1,0 +1,45 @@
+{
+	"GCSE": {
+		"1: Energy": [
+			"1.1: Kinetic Energy",
+			"1.2: Gravitational Energy",
+			"1.3: Power",
+			"1.4: Efficiency",
+			"1.5: Elastic Energy",
+			"1.6: Thermal Energy"
+		],
+		"2: Electricity": [
+			"2.1: Charge Flow",
+			"2.2: Potential Difference",
+			"2.3: Total Resistance",
+			"2.4: Power",
+			"2.5: Energy Transferred"
+		],
+		"3: Particles": [
+			"3.1: Density",
+			"3.2: Thermal Energy",
+			"3.3: Gas Pressure"
+		],
+		"4: Forces": [
+			"4.1: Weight",
+			"4.2: Work Done",
+			"4.3: Spring Constant",
+			"4.4: Moments",
+			"4.5: Pressure",
+			"4.6: Distance Travelled",
+			"4.7: Acceleration",
+			"4.8: Resultant Force",
+			"4.9: Momentum",
+			"4.10: Liquid Pressure",
+			"4.11: Change In Momentum"
+		],
+		"5: Waves": [
+			"5.1: Wave Speed",
+			"5.2: Time Period",
+			"5.3: Maginfication"
+		],
+		"6: Magnetism": [
+			"6.1: Force"
+		]
+	}
+}

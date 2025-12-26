@@ -1,4 +1,4 @@
-from .create_db import db, User, Stats
+from .create_db import db, User, Stats, TopicQuestion
 
 
 class Select:
@@ -55,3 +55,20 @@ class Select:
 			"bio": user_stats.bio,
 			"join_date": user_stats.join_date.strftime("%x")
 		}
+	
+	# Return a list of questions filtered by topic
+	@staticmethod
+	def get_topic_questions(topics_list, difficulties):
+		question_id_list = []
+		for topic in topics_list:
+			questions = TopicQuestion.query.filter(TopicQuestion.topic == topic).all()
+
+			# Some questions may have multiple topics
+			for question in questions:
+				difficulty = question.difficulty
+				id = question.question_id
+
+				if id not in question_id_list and difficulty in difficulties:
+					question_id_list.append(question.question_id)
+		
+		return question_id_list

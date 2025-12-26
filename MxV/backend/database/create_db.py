@@ -45,7 +45,7 @@ class Question(db.Model):
 	answer_units = db.Column(db.String(10), default="None")
 	working_image_filename = db.Column(db.String(255), nullable=False, unique=True)
 	level = db.Column(db.String(4), nullable=False)
-	difficulty = db.Column(db.String(2), nullable=False)
+	difficulty = db.Column(db.String(10), nullable=False)
 
 	# Related tables
 	topic_questions = db.relationship("TopicQuestion", back_populates="question", cascade="all, delete-orphan")
