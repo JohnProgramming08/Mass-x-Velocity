@@ -4,23 +4,22 @@ from services import Topics
 
 topics_bp = Blueprint("topics", __name__)
 
-@topics_bp.route("/topics/<int: id>", methods=["GET", "POST"])
+@topics_bp.route("/topics/<int:id>", methods=["GET", "POST"])
 def topics(id):
-	gcse_form = GCSETopicsForm
-	difficulty_form = DifficultyForm
-	success = False
+	gcse_form = GCSETopicsForm()
+	difficulty_form = DifficultyForm()
 
 	# If user has not submitted a form
 	if not gcse_form.validate_on_submit():
-		return render_template("topics.html", gcse_form=gcse_form, difficulty_form=difficulty_form, error="")
+		return render_template("topics.html", id=id, gcse_form=gcse_form, difficulty_form=difficulty_form, error="")
 	
 	# User has submitted a form
 	logic = Topics(gcse_form, difficulty_form)
 	valid = logic.check_valid()
 
 	# Invalid form submition
-	if valid.result == False:
-		return render_template("topics.html", gcse_form=gcse_form, error=valid.error)
+	if valid["result"] == False:
+		return render_template("topics.html", id=id, gcse_form=gcse_form, difficulty_form=difficulty_form, error=valid["error"])
 	
 	# Valid form submition
 	questions = logic.get_questions()

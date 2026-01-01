@@ -6,6 +6,65 @@
 
 {% block main %}
 <main>
-	
+	<form action="/topics/{{ id }}" method="post" id="gcse-form">
+		<!-- Difficulty Card -->
+		<div id="difficulty-card" class="card">
+			<h1>Difficulties</h1>
+			
+				{{ difficulty_form.hidden_tag() }}
+				<!-- All the difficulty checkboxes -->
+				<div class="checkbox-div">
+					{{ difficulty_form.practice1() }}
+					<h4>{{ difficulty_form.practice1.label }}</h4>
+				</div>
+
+				<div class="checkbox-div">
+					{{ difficulty_form.practice2() }}
+					<h4>{{ difficulty_form.practice2.label }}</h4>
+				</div>
+
+				<div class="checkbox-div">
+					{{ difficulty_form.practice3() }}
+					<h4>{{ difficulty_form.practice3.label }}</h4>
+				</div>
+
+				<div class="checkbox-div">
+					{{ difficulty_form.exam1() }}
+					<h4>{{ difficulty_form.exam1.label }}</h4>
+				</div>
+
+				<div class="checkbox-div">
+					{{ difficulty_form.exam2() }}
+					<h4>{{ difficulty_form.exam2.label }}</h4>
+				</div>
+			
+		</div>
+
+		<!-- Topics Card -->
+		<div id="topics-card" class="card">
+			<h1>Topics</h1>
+				{{ gcse_form.hidden_tag() }}
+				{% for field in gcse_form if field.type == 'BooleanField' %}
+
+				<div class="checkbox-div">
+					{{ field() }}
+					<h4>
+						{{ field.label }}
+						<!-- Topics should have a caret next to them -->
+						{% if 'topic' == field.render_kw['class'] %}
+						<i class="fa-solid fa-caret-down caret"></i>
+						{% endif %}
+					</h4>
+				</div>
+				{% endfor %}
+
+				<div class="submit-holder">
+					<p class="error" id="error">{{ error }}</p>
+					{{ gcse_form.submit() }}
+				</div>
+		</div>
+	</form>
 </main>
+
+<script src="{{ url_for('static', filename='js/topics.js') }}"></script>
 {% endblock %}

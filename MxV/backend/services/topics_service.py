@@ -18,7 +18,7 @@ class Topics:
 	
 	# Get all of the questions with the selected topics
 	def get_questions(self):
-		questions = Select.get_topic_questions(self.topics_list)
+		questions = Select.get_topic_questions(self.topics_list, self.difficulties)
 
 		return questions
 	

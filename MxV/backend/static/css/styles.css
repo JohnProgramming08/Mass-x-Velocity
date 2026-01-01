@@ -110,13 +110,30 @@ input[type='text']:focus, input[type='password']:focus, input[type='email']:focu
 	border: 2px solid var(--border);
 }
 
-input[type="checkbox"], input[type="radio"] {
-	width: 20px;
-	height: 20px;
-	background: var(--input);
-	border: 2px solid var(--border);
-	border-radius: 4px;
-	accent-color: var(--input);
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--input);
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+	margin-right: 10px;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: solid var(--input);
+    border-width: 0 2px 2px 0;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 input[type="checkbox"]:checked, input[type="radio"]:checked {

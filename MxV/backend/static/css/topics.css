@@ -1,0 +1,76 @@
+/* Global Styles */
+:root {
+	--selected-fg: #018493;
+}
+
+/* Header Styles */
+#topics, #topics:hover {
+	color: var(--selected-fg);
+}
+
+/* Main Styles */
+main, form {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	width: auto;
+	padding-bottom: 10vh;
+}
+
+form {
+	width: 90vw;
+}
+
+/* Difficulty Card Styles */
+#difficulty-card, #topics-card {
+	width: 25vw;
+	margin-left: 5vw;
+	margin-top: 10vh;
+}
+
+.checkbox-div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+h1 {
+	text-align: center;
+}
+
+/* Topics Card Styles */
+#topics-card {
+	width: 30vw;
+	margin-right: 10vh;
+	margin-left: 0;
+}
+
+.subtopic {
+	margin-left: 30px;
+}
+
+input[type="submit"] {
+	width: 50%;
+	height: 8vh;
+}
+
+.submit-holder {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.caret {
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+#error {
+	margin-bottom: 5px;
+}
+
