@@ -74,3 +74,22 @@ input[type="submit"] {
 	margin-bottom: 5px;
 }
 
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	main, form {
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 5vh;
+	}
+
+	form {
+		width: 90vw;
+	}
+
+	#difficulty-card, #topics-card {
+		width: 90vw;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 5vh;
+	}
+}
