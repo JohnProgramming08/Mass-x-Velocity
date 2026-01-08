@@ -1,0 +1,48 @@
+{
+	"GCSE": {
+		"1.1: Kinetic Energy": [
+			{
+				"question": "A block of mass 5kg is travelling at 2m/s. Calculate the kinetic energy of the block.",
+				"answer": 10,
+				"units": "J",
+				"working_image_filename": "GCSE_1-1_solution1.png",
+				"difficulty": "practice1"
+			},
+			{
+				"question": "A person of mass 70kg is running at 10m/s. Calculate the persons kinetic energy.",
+				"answer": 3500,
+				"units": "J",
+				"working_image_filename": "GCSE_1-1_solution2.png",
+				"difficulty": "practice1"
+			},
+			{
+				"question": "A ball rolls down a hill with a velocity of 5m/s and has a mass of 2kg. Calculate the kinetic energy of the ball.",
+				"answer": 25,
+				"units": "J",
+				"working_image_filename": "GCSE_1-1_solution3.png",
+				"difficulty": "practice1"
+			},
+			{
+				"question": "A ball has 100J of kinetic energy and is travelling at 10m/s. Calculate its mass.",
+				"answer": 2,
+				"units": "kg",
+				"working_image_filename": "GCSE_1-1_solution4.png",
+				"difficulty": "practice2"
+			},
+			{
+				"question": "The maximum kinetic energy of a running cheetah is 27500J. Given that the average mass of a cheetah is 50kg, calculate the maximum velocity of a cheetah.",
+				"answer": 33,
+				"units": "m/s",
+				"working_image_filename": "GCSE_1-1_solution5.png",
+				"difficulty": "practice2"
+			},
+			{
+				"question": "A car has a mass of 2000kg and has 64000J of kinetic energy. Calculate the velocity of the car.",
+				"answer": 8,
+				"units": "m/s",
+				"working_image_filename": "GCSE_1-1_solution6.png",
+				"difficulty": "practice2"
+			}
+		]
+	}
+}
