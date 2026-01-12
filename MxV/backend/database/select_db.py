@@ -1,4 +1,4 @@
-from .create_db import db, User, Stats, TopicQuestion
+from .create_db import db, User, Stats, TopicQuestion, Question
 
 
 class Select:
@@ -72,3 +72,16 @@ class Select:
 					question_id_list.append(question.question_id)
 		
 		return question_id_list
+	
+	# Return an array of questions given their id's
+	@staticmethod
+	def get_questions(id_list):
+		questions = []
+		for id in id_list:
+			question = Question.query.filter(Question.question_id == id).first()
+			questions.append(question)
+		
+		return questions
+			
+
+	

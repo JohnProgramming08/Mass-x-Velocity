@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, session
 from forms import GCSETopicsForm, DifficultyForm
 from services import Topics
 
@@ -23,5 +23,6 @@ def topics(id):
 	
 	# Valid form submition
 	questions = logic.get_questions()
-	return redirect(url_for("study.study", id=id, questions=questions))
+	session["questions"] = questions # Fetched in study.py
+	return redirect(url_for("study.study", id=id))
 			
