@@ -65,11 +65,11 @@ class Select:
 
 			# Some questions may have multiple topics
 			for question in questions:
-				difficulty = question.difficulty
+				difficulty = question.question.difficulty
 				id = question.question_id
 
 				if id not in question_id_list and difficulty in difficulties:
-					question_id_list.append(question.question_id)
+					question_id_list.append(id)
 		
 		return question_id_list
 	

@@ -21,8 +21,8 @@ def topics(id):
 	if valid["result"] == False:
 		return render_template("topics.html", id=id, gcse_form=gcse_form, difficulty_form=difficulty_form, error=valid["error"])
 	
-	# Valid form submition
-	questions = logic.get_questions()
-	session["questions"] = questions # Fetched in study.py
+	question_ids = logic.get_questions()
+	session["question_number"] = 0
+	session["question_ids"] = question_ids # Fetched in study.py
 	return redirect(url_for("study.study", id=id))
 			

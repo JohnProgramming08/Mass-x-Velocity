@@ -16,5 +16,24 @@ class Json:
 
 		return topics
 	
+	# Return an array all questions
+	@staticmethod
+	def get_questions():
+		with open("config/questions.json", "r") as file:
+			questions = []
+			data = json.load(file)
+			
+			# Iterate through each question
+			for level in data:
+				for topic in data[level]:
+					for question in data[level][topic]:
+						temp = question
+						temp["topic"] = topic
+						temp["level"] = level
+						temp["topic"] = topic
+						questions.append(temp)
+
+		return questions
+	
 
 

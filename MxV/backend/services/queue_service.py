@@ -1,8 +1,8 @@
 # Queue class allowing data to be enqueued and dequeued
 
 class Queue:
-	def __init__(self):
-		self.data = []
+	def __init__(self, questions):
+		self.data = questions
 
 	def enqueue(self, element):
 		self.data.append(element)

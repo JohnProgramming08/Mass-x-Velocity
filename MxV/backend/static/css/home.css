@@ -73,9 +73,22 @@
 	align-items: center;
 }
 
+#total-momentum-div {
+	display: flex;
+	align-items: center;
+}
+
+#total-momentum {
+	margin-right: 10px;
+}
+
 .bar-div {
 	width: 90%;
 	margin-bottom: 10px;
+}
+
+.bar-title {
+	padding-left: 10%;
 }
 
 .bar-container {
@@ -85,6 +98,8 @@
 	border-radius: 9999px;
 	height: 5vh;
 	margin-top: 2px;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .bar {

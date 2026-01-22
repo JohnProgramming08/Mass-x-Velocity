@@ -22,6 +22,7 @@
 
 html, body {
 	width: 100%;
+	overflow-x: hidden;
 	height: 100vh;
 	background: var(--bg);
 }
@@ -49,7 +50,7 @@ header a:hover {
 }
 
 /* Font Styles */
-h1, h2, h3, button, header a, .dropdown, input[type="submit"] {
+h1, h2, h3, button, header a, .dropdown, input[type="submit"], .button {
 	font-family: 'Poppins', system-ui, sans-serif;
 	font-size: 32px;
 	color: var(--primary);
@@ -59,11 +60,11 @@ h2 {
 	font-size: 28px;
 }
 
-h3, button, header a, .dropdown, input[type="submit"] {
+h3, button, header a, .dropdown, input[type="submit"], .button {
 	font-size: 24px;
 }
 
-p, h4, input[type='email'], input[type='password'], input[type='text'] {
+p, h4, input[type='email'], input[type='password'], input[type='text'], a {
 	font-family: 'Inter', system-ui, sans-serif;
 	font-size: 16px;
 	color: var(--secondary);
@@ -86,20 +87,26 @@ h4 {
 }
 
 /* Input Styles */
-input[type='submit'] {
+input[type='submit'], .button {
 	background-color: var(--button);
 	transition: 0.2s ease-in-out;
 	border-radius: 9999px;
 	border: none;
 }
 
-input[type='submit']:hover {
+input[type='submit']:hover, .button:hover {
 	background-color: var(--border);
 	font-weight: bold;
 	cursor: pointer;
 }
 
-input[type='text'], input[type='password'], input[type='email'] {
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+input[type='text'], input[type='password'], input[type='email'], select {
 	background-color: var(--input);
 	border-radius: 10px;
 	padding: 10px;
@@ -108,7 +115,8 @@ input[type='text'], input[type='password'], input[type='email'] {
 
 input[type='text']:focus, input[type='password']:focus, input[type='email']:focus {
 	color: var(--primary);
-	border: 2px solid var(--border);
+	border: 2px solid var(--primary);
+	outline: none;
 }
 
 input[type="checkbox"] {
@@ -152,6 +160,26 @@ input[type="radio"] {
 
 .flip {
 	transform: rotate(180deg);
+}
+
+select {
+    border: 2px solid transparent;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+select:focus {
+    outline: none;
+    border: 2px solid var(--primary);
+	color: var(--primary)
+}
+
+/* Option styling */
+option {
+    background-color: var(--card);
+    color: var(--primary);
+	border: none;
 }
 
 /* Bars */

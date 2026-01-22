@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Adjust the width of given momentum bar
 	function adjustBarWidth(bar, percent) {
 		bar.style.width = `${percent}%`;
+		
+		if (percent !== 100) {
+			bar.style.borderTopRightRadius = '0px';
+			bar.style.borderBottomRightRadius = '0px';
+		}
 	}
 
 	// Adjust the width of every momentum bar
