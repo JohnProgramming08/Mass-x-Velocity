@@ -8,7 +8,7 @@ class Study:
 	
 	# Return the next question and push it to the back of the queue
 	def get_next_question(self):
-		question_id = self.queue.dequeue()
+		question_id = self.queue.peek()
 		self.queue.enqueue(question_id)
 		return Select.get_questions([question_id])[0]
 		
@@ -31,7 +31,8 @@ class Study:
 
 	# Submit an answer
 	def submit_answer(self, user_units, user_answer):
-		question_id = self.queue.data[-1]
+		question_id = self.queue.dequeue()
+		self.queue.enqueue(question_id)
 		question = Select.get_questions([question_id])[0]
 		answer = question.answer
 		units = question.answer_units
