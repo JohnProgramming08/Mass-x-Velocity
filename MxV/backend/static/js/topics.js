@@ -3,103 +3,131 @@ document.addEventListener('DOMContentLoaded', () => {
 	const topicCheckboxes = Array.from(document.getElementsByClassName('topic'));
 	const subtopicCheckboxes = Array.from(document.getElementsByClassName('subtopic'));
 
-	// Get the class associated with each caret
-	function getClass(caret) {
-		const parent = caret.parentElement;
-		const classElement = parent.querySelector('label');
-		return classElement.htmlFor;
-	}
-
-	// Hide all associated checkboxes
-	function hideCheckboxes(caret) {
-		const topic = getClass(caret);
-		const checkboxes = Array.from(document.getElementsByClassName(topic));
-		
-		for (const checkbox of checkboxes) {
-			checkbox.parentElement.style.display = 'none';
-		}
-
-		caret.addEventListener('click', () => {
-			showCheckboxes(caret);
-		});
-		caret.style.transform = 'rotate(180deg)';
-	}
-
-	// Show all associated checkboxes
-	function showCheckboxes(caret) {
-		const topic = getClass(caret);
-		const checkboxes = Array.from(document.getElementsByClassName(topic));
-		
-		for (const checkbox of checkboxes) {
-			checkbox.parentElement.style.display = 'flex';
-		}
-
-		caret.addEventListener('click', () => {
-			hideCheckboxes(caret);
-		});
-		caret.style.transform = '';
-	}
-
-	// Assign event listeners to each caret
-	for (const caret of carets) {
-		caret.addEventListener('click', () => {
-			hideCheckboxes(caret);
-		});
-	}
-
-	// Change check of all checkboxes with the same topic
-	function changeCheck(checkbox) {
-		const topic = getClass(checkbox);
-		const checkboxes = Array.from(document.getElementsByClassName(topic));
-
-		for (const box of checkboxes) {
-			box.checked = checkbox.checked;
-		}
-	}
-
-	// Assign event listeners to checkboxes and labels
-	for (const box of topicCheckboxes) {
-		const boxLabel = box.parentElement.querySelector('label');
-		box.addEventListener('click', () => {
-			changeCheck(box);
-		});
-
-		boxLabel.addEventListener('click', () => {
-			changeCheck(box);
-		});
-	}
-
-	// Get the topic checkbox of the clicked subtopic checkbox
-	function getTopicBox(box) {
-		const topic = box.classList[1] + ' ' + box.classList[2];
-		return document.getElementById(topic);
-	}
-
-	// Get the subtopic checkboxes of the clicked checkbox
-	function getSubtopicBoxes(box) {
-		const topic = box.classList[1];
-		return Array.from(document.getElementsByClassName(topic));
-	}
-
-	// Change the topic boxes checked state
-	function changeTopicBox(box) {
-		const topicBox = getTopicBox(box);
-		const boxList = getSubtopicBoxes(box);
-
-		for (const subtopicBox of boxList) {
-			if (!subtopicBox.checked) {
-				topicBox.checked = false;
-				return ''
+	// Handles all logic with showing and hiding checkboxes using carets
+	class CaretLogic {
+		constructor(carets) {
+			this.caretList = carets;
+			for (const caret of this.caretList) {
+				this.assignEventListener(caret);
 			}
 		}
 
-		topicBox.checked = true;
+		// Get the topic associated with a given caret
+		getTopic(caret) {
+			const parent = caret.parentElement;
+			const classElement = parent.querySelector('label');
+			return classElement.htmlFor;
+		}
+
+		// Change the display of all checkboxes associated with caret
+		changeCheckboxesDisplay(caret, newDisplay) {
+			const topic = this.getTopic(caret);
+			const checkboxes = Array.from(document.getElementsByClassName(topic));
+
+			for (const checkbox of checkboxes) {
+				checkbox.parentElement.style.display = newDisplay;
+			}
+		}
+
+		// Assign event listener to a caret
+		assignEventListener(caret) {
+			caret.addEventListener('click', () => {
+				// Hide checkboxes
+				if (caret.id === 'down') {
+					this.changeCheckboxesDisplay(caret, 'none');
+					caret.id = 'up';
+					caret.style.transform = 'rotate(180deg)';
+				}
+
+				// Show checkboxes 
+				else {
+					this.changeCheckboxesDisplay(caret, 'flex');
+					caret.id = 'down';
+					caret.style.transform = '';
+				}
+			});
+		}
+	}
+	
+
+	// Handles all logic of checking boxes based on the state of other boxes
+	class CheckboxLogic {
+		constructor(topicCheckboxes, subtopicCheckboxes) {
+			this.topicCheckboxes = topicCheckboxes;
+			this.subtopicCheckboxes = subtopicCheckboxes;
+			this.assignTopicEventListeners(this.topicCheckboxes);
+			this.assignSubtopicEventListeners(this.subtopicCheckboxes);
+		}
+
+		// Logic for when topic checkboxes are clicked
+		// Return the topic associated with a checkbox
+		getTopic(checkbox) {
+			const parent = checkbox.parentElement;
+			const classElement = parent.querySelector('label');
+			return classElement.htmlFor;
+		}
+
+		// Change the check of all checkboxes with the same topic
+		changeCheck(checkbox) {
+			const topic = this.getTopic(checkbox);
+			const checkboxes = Array.from(document.getElementsByClassName(topic));
+
+			for (const box of checkboxes) {
+				box.checked = checkbox.checked;
+			}
+		}
+
+		// Assign event listeners to all topic checkboxes and labels
+		assignTopicEventListeners() {
+			for (const box of this.topicCheckboxes) {
+				const boxLabel = box.parentElement.querySelector('label');
+				box.addEventListener('click', () => {
+					this.changeCheck(box);
+				});
+
+				boxLabel.addEventListener('click', () => {
+					this.changeCheck(box);
+				});
+			}
+		}
+
+		// Logic for when subtopic checkboxes are clicked
+		// Return the topic checkbox of hte clicked subtopic checkbox
+		getTopicBox(checkbox) {
+			const topic = checkbox.classList[1] + ' ' + checkbox.classList[2];
+			return document.getElementById(topic);
+		}
+
+		// Return the subtopic checkboxes of the clicked checkbox
+		getSubtopicBoxes(checkbox) {
+			const topic = checkbox.classList[1];
+			return Array.from(document.getElementsByClassName(topic));
+		}
+
+		// Change the topic boxes checked state
+		changeTopicBox(checkbox) {
+			const topicBox = this.getTopicBox(checkbox);
+			const subtopicBoxList = this.getSubtopicBoxes(checkbox);
+
+			for (const subtopicBox of subtopicBoxList) {
+				if (!subtopicBox.checked) {
+					topicBox.checked = false;
+					return ''
+				}
+			}
+
+			topicBox.checked = true;
+		}
+
+		assignSubtopicEventListeners() {
+			for (const checkbox of this.subtopicCheckboxes) {
+				checkbox.addEventListener('click', () => {
+					this.changeTopicBox(checkbox);
+				});
+			}
+		}
 	}
 
-	// Assign event listeners to all subtopic checkboxes
-	for (const box of subtopicCheckboxes) {
-		box.addEventListener('click', () => {
-			changeTopicBox(box);
-		});
-	}
+	new CaretLogic(carets);
+	new CheckboxLogic(topicCheckboxes, subtopicCheckboxes);
 });
