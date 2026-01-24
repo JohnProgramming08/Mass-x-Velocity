@@ -121,3 +121,22 @@ select, input[type="text"] {
 #finish-task:hover {
 	text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+	#question-div, #question-info {
+		width: 90vw;
+		max-width: 90vw;
+	}
+	
+	form {
+		flex-direction: column;
+	}
+
+	input[type="submit"] {
+		margin-top: 10px;
+	}
+
+	#finish-task-div {
+		width: 90vw;
+	}
+}

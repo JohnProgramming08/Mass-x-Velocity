@@ -14,7 +14,8 @@ def study(id):
 	last_id = session["last_id"]
 
 	# User has not submitted a form
-	if not form.validate_on_submit():
+	if not form.validate_on_submit() or session["next"] == False:
+		session["next"] = True
 		question = question_logic.get_next_question()
 		# Ensure that the user has not just reloaded the page to skip a question
 		if last_id != question.question_id:
@@ -29,6 +30,7 @@ def study(id):
 	units = form.units.data
 	correct = question_logic.submit_answer(units, answer)
 	session["question_ids"] = question_logic.queue.data
+	session["next"] = False
 
 	if correct > 0:
 		return render_template("study.html", question=question, correct="correct", form=form, id=id, question_number=question_number, momentum=correct)
