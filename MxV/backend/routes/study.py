@@ -31,8 +31,10 @@ def study(id):
 	correct = question_logic.submit_answer(units, answer)
 	session["question_ids"] = question_logic.queue.data
 	session["next"] = False
+	session["gained_momentum"] += correct
 
 	if correct > 0:
+		session["correct"] += 1
 		return render_template("study.html", question=question, correct="correct", form=form, id=id, question_number=question_number, momentum=correct)
 	
 	return render_template("study.html", question=question, correct="incorrect", form=form, id=id, question_number=question_number, momentum=0)

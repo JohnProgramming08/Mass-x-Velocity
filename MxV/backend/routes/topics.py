@@ -24,6 +24,8 @@ def topics(id):
 	question_ids = logic.get_questions()
 	session["question_number"] = 0
 	session["last_id"] = 0
+	session["correct"] = 0
+	session["gained_momentum"] = 0
 	session["next"] = False
 	session["question_ids"] = question_ids # Fetched in study.py
 	return redirect(url_for("study.study", id=id))

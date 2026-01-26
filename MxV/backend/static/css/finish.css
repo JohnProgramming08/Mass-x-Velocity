@@ -1,0 +1,42 @@
+#summary-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 40vw;
+}
+
+.data-div {
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+h3 {
+	margin-bottom: 10px;
+}
+
+p, h4 {
+	margin-top: 10px;
+	text-align: left;
+}
+
+p {
+	width: 80%;
+}
+
+h4 {
+	width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+	#summary-div {
+		width: 90vw;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	p, h4 {
+		font-size: 20px;
+	}
+}
