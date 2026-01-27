@@ -64,7 +64,7 @@ h3, button, header a, .dropdown, input[type="submit"], .button {
 	font-size: 24px;
 }
 
-p, h4, input[type='email'], input[type='password'], input[type='text'], a {
+p, h4, input[type='email'], input[type='password'], input[type='text'], a, input[type="float"] {
 	font-family: 'Inter', system-ui, sans-serif;
 	font-size: 16px;
 	color: var(--secondary);
@@ -106,14 +106,14 @@ input[type='submit']:hover, .button:hover {
 	align-items: center;
 }
 
-input[type='text'], input[type='password'], input[type='email'], select {
+input[type='text'], input[type='password'], input[type='email'], select, input[type="float"] {
 	background-color: var(--input);
 	border-radius: 10px;
 	padding: 10px;
 	border: none;
 }
 
-input[type='text']:focus, input[type='password']:focus, input[type='email']:focus {
+input[type='text']:focus, input[type='password']:focus, input[type='email']:focus, input[type="float"]:focus {
 	color: var(--primary);
 	border: 2px solid var(--primary);
 	outline: none;

@@ -10,6 +10,7 @@ def study(id):
 	question_ids = session.get("question_ids", [])
 	question_logic = Study(question_ids, id)
 
+	# Information on current question to display to the user
 	question_number = session["question_number"]
 	last_id = session["last_id"]
 
@@ -24,11 +25,17 @@ def study(id):
 			session["last_id"] = question.question_id
 
 		return render_template("study.html", question=question, correct="", form=form, id=id, question_number=question_number, momentum=-1)
-	
+
+	# Get the users answer data and evaluate their answer
 	question = question_logic.get_current_question()
 	answer = form.answer.data
+	if not answer.isdigit():
+		return render_template("study.html", question=question, correct="", form=form, id=id, question_number=question_number, momentum=-1)
+
 	units = form.units.data
 	correct = question_logic.submit_answer(units, answer)
+
+	# Update temporary session data
 	session["question_ids"] = question_logic.queue.data
 	session["next"] = False
 	session["gained_momentum"] += correct

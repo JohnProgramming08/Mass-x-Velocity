@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, SubmitField, EmailField
-from wtforms.validators import DataRequired, Length
+from wtforms import StringField, SelectField, SubmitField
+from wtforms.validators import DataRequired
 
 class StudyForm(FlaskForm):
 	units = SelectField("Units", choices= [
@@ -9,5 +9,5 @@ class StudyForm(FlaskForm):
 		("N", "N"),
 		("J", "J"),
 	])
-	answer = StringField("Answer", render_kw={"placeholder": "Answer"})
+	answer = StringField("Answer", render_kw={"placeholder": "Answer"}, validators=[DataRequired()])
 	submit = SubmitField("Submit")
