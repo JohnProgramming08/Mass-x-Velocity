@@ -38,7 +38,7 @@ class Study:
 		units = question.answer_units
 
 		# User got correct answer
-		if int(user_answer) == answer and user_units == units:
+		if float(user_answer) == answer and user_units == units:
 			momentum = self.calculate_momentum(question)
 			Update.update_correct_answer(self.user_id, momentum, question.difficulty)
 			return momentum

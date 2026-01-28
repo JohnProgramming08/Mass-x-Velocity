@@ -195,6 +195,20 @@ option {
 	background-color: var(--border);
 }
 
+/* Pop up on scroll styles */
+.reveal {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
 	html {

@@ -42,6 +42,13 @@
 				"units": "m/s",
 				"working_image_filename": "GCSE_1-1_solution6.png",
 				"difficulty": "practice2"
+			},
+			{
+				"question": "John Cena has a weight of 1117.2N, he runs at you at a velocity of 6.7m/s. How much kinetic energy does John Cena have? Give your answer to 2 significant figures.",
+				"answer": 2600,
+				"units": "J",
+				"working_image_filename": "GCSE_1-1_solution7.png",
+				"difficulty": "practice3"
 			}
 		]
 	}

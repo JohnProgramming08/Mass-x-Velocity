@@ -9,7 +9,7 @@
 {% block main %}
 <!-- Main Content -->
 <main>
-	<div id="intro-div">
+	<div id="intro-div" class="reveal">
 		<div class="text" id="intro-text">
 			<h1>Accelerate Your Learning!</h1>
 			<p>Interactive physics revision designed to build confidence.</p>
@@ -17,7 +17,7 @@
 		<i id="intro-image" class="fa-solid fa-atom" aria-hidden="true"></i>
 	</div>
 	
-	<div id="card-div">
+	<div id="card-div" class="reveal">
 		<div class="card ">
 			<i class="fa-solid fa-landmark card-image" aria-hidden="true"></i>
 			<div class="text">
@@ -43,7 +43,7 @@
 		</div>
 	</div>
 
-	<div class="card" id="dylan-bio">
+	<div class="card reveal" id="dylan-bio">
 		<h2 id="dylan-title">Built for physics students, by a physics student!</h2>
 		<div id="dylan-div">
 			<img id="dylan-gif" src="{{url_for('static', filename='videos/dylan.gif')}}">
@@ -52,4 +52,5 @@
 	</div>
 </main>
 <script src="{{ url_for('static', filename='js/index.js')}}"></script>
+<script src="{{ url_for('static', filename='js/reveal.js') }}"></script>
 {% endblock %}
