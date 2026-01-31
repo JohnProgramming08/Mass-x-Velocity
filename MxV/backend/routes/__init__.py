@@ -7,10 +7,11 @@ from .topics import topics_bp
 from .study import study_bp
 from .finish import finish_bp
 
+
 def register_routes(app: Flask):
-	app.register_blueprint(index_bp)
-	app.register_blueprint(join_bp)
-	app.register_blueprint(home_bp)
-	app.register_blueprint(topics_bp)
-	app.register_blueprint(study_bp)
-	app.register_blueprint(finish_bp)
+    app.register_blueprint(index_bp)
+    app.register_blueprint(join_bp)
+    app.register_blueprint(home_bp)
+    app.register_blueprint(topics_bp)
+    app.register_blueprint(study_bp)
+    app.register_blueprint(finish_bp)
