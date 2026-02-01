@@ -1,64 +1,63 @@
-{% extends "intro.html" %}
-
-{% block style %}
-<link rel="stylesheet" href="{{url_for('static', filename='css/intro.css')}}">
-<link rel="stylesheet" href="{{url_for('static', filename='css/join.css')}}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="..." crossorigin="anonymous">
-{% endblock %}
-
-{% block main %}
+{% extends "intro.html" %} {% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/intro.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/join.css')}}" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="..."
+  crossorigin="anonymous"
+/>
+{% endblock %} {% block main %}
 <!-- Main Content -->
 <main id="{{ clicked }}">
-	<div class="graphics-div">
-		<h1>First Time?</h1>
-		<h4>Sign up now and watch your grades skyrocket!</h4>
-		<i class="fa-solid fa-user-astronaut icon"></i>
-	</div>
+  <div class="graphics-div">
+    <h1>First Time?</h1>
+    <h4>Sign up now and watch your grades skyrocket!</h4>
+    <i class="fa-solid fa-user-astronaut icon"></i>
+  </div>
 
-	<!-- Log in and sign up forms -->
-	<div id="form-div" class="card">
-		<form action="/join/{{ clicked }}" method="post" id="signup_form">
-			{{ sign_up_form.hidden_tag() }}
-			<h1>Welcome!</h1>
-			<p class="error">{{ sign_up_error }}</p>
-			<div class="input-div">
-				{{ sign_up_form.email() }}
-				{{ sign_up_form.password() }}
-			</div>
-			{{ sign_up_form.sign_up() }}
-			<button type="button" id="log-in-btn">Log In</button>
-			
-			<!-- Graphics Div -->
-			<div class="mobile-graphics-div">
-				<h4>Sign up now and watch your grades skyrocket!</h4>
-				<i class="fa-solid fa-user-astronaut icon"></i>
-			</div>
-		</form>
+  <!-- Log in and sign up forms -->
+  <div id="form-div" class="card">
+    <form action="/join/{{ clicked }}" method="post" id="signup_form">
+      {{ sign_up_form.hidden_tag() }}
+      <h1>Welcome!</h1>
+      <p class="error">{{ sign_up_error }}</p>
+      <div class="input-div">
+        {{ sign_up_form.email() }} {{ sign_up_form.password() }}
+      </div>
+      {{ sign_up_form.sign_up() }}
+      <button type="button" id="log-in-btn">Log In</button>
 
-		<form action="/join/{{ clicked }}" method="post" id="login_form">
-			{{ log_in_form.hidden_tag() }}
-			<h1>Welcome Back!</h1>
-			<p class="error">{{ log_in_error }}</p>
-			<div class="input-div">
-				{{ log_in_form.email() }}
-				{{ log_in_form.password() }}
-			</div>
-			{{ log_in_form.log_in() }}
-			<button type="button" id="sign-up-btn">Sign Up</button>
+      <!-- Graphics Div -->
+      <div class="mobile-graphics-div">
+        <h4>Sign up now and watch your grades skyrocket!</h4>
+        <i class="fa-solid fa-user-astronaut icon"></i>
+      </div>
+    </form>
 
-			<!-- Graphics Div -->
-			<div class="mobile-graphics-div">
-				<h4>Log in to prevent your grades from decaying!</h4>
-				<i class="fa-solid fa-radiation icon"></i>
-			</div>
-		</form>
-	</div>
+    <form action="/join/{{ clicked }}" method="post" id="login_form">
+      {{ log_in_form.hidden_tag() }}
+      <h1>Welcome Back!</h1>
+      <p class="error">{{ log_in_error }}</p>
+      <div class="input-div">
+        {{ log_in_form.email() }} {{ log_in_form.password() }}
+      </div>
+      {{ log_in_form.log_in() }}
+      <button type="button" id="sign-up-btn">Sign Up</button>
 
-	<div class="graphics-div" id="g2">
-		<h1>Been Here Before?</h1>
-		<h4>Log in to prevent your grades from decaying!</h4>
-		<i class="fa-solid fa-radiation icon"></i>
-	</div>
+      <!-- Graphics Div -->
+      <div class="mobile-graphics-div">
+        <h4>Log in to prevent your grades from decaying!</h4>
+        <i class="fa-solid fa-radiation icon"></i>
+      </div>
+    </form>
+  </div>
+
+  <div class="graphics-div" id="g2">
+    <h1>Been Here Before?</h1>
+    <h4>Log in to prevent your grades from decaying!</h4>
+    <i class="fa-solid fa-radiation icon"></i>
+  </div>
 </main>
 <script src="{{ url_for('static', filename='js/join.js')}}"></script>
 {% endblock %}
