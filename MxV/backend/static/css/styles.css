@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* Theme Variables */
 :root {
-	--bg: #0B0E14;
+	--bg: #0b0e14;
 	--card: #151922;
-	--border: #38B6FF;
+	--border: #38b6ff;
 	--button: #018493;
-	--primary: #F5F5F5;
-	--secondary: #C0C0C0;
-	--input: #1C2028;
+	--primary: #f5f5f5;
+	--secondary: #c0c0c0;
+	--input: #1c2028;
 	--error: #b71c1c;
 }
 
@@ -20,7 +20,8 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
 	width: 100%;
 	overflow-x: hidden;
 	height: 100vh;
@@ -50,8 +51,15 @@ header a:hover {
 }
 
 /* Font Styles */
-h1, h2, h3, button, header a, .dropdown, input[type="submit"], .button {
-	font-family: 'Poppins', system-ui, sans-serif;
+h1,
+h2,
+h3,
+button,
+header a,
+.dropdown,
+input[type="submit"],
+.button {
+	font-family: "Poppins", system-ui, sans-serif;
 	font-size: 32px;
 	color: var(--primary);
 }
@@ -60,12 +68,23 @@ h2 {
 	font-size: 28px;
 }
 
-h3, button, header a, .dropdown, input[type="submit"], .button {
+h3,
+button,
+header a,
+.dropdown,
+input[type="submit"],
+.button {
 	font-size: 24px;
 }
 
-p, h4, input[type='email'], input[type='password'], input[type='text'], a, input[type="float"] {
-	font-family: 'Inter', system-ui, sans-serif;
+p,
+h4,
+input[type="email"],
+input[type="password"],
+input[type="text"],
+a,
+input[type="float"] {
+	font-family: "Inter", system-ui, sans-serif;
 	font-size: 16px;
 	color: var(--secondary);
 }
@@ -87,14 +106,16 @@ h4 {
 }
 
 /* Input Styles */
-input[type='submit'], .button {
+input[type="submit"],
+.button {
 	background-color: var(--button);
 	transition: 0.2s ease-in-out;
 	border-radius: 9999px;
 	border: none;
 }
 
-input[type='submit']:hover, .button:hover {
+input[type="submit"]:hover,
+.button:hover {
 	background-color: var(--border);
 	font-weight: bold;
 	cursor: pointer;
@@ -106,47 +127,55 @@ input[type='submit']:hover, .button:hover {
 	align-items: center;
 }
 
-input[type='text'], input[type='password'], input[type='email'], select, input[type="float"] {
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+input[type="float"] {
 	background-color: var(--input);
 	border-radius: 10px;
 	padding: 10px;
 	border: none;
 }
 
-input[type='text']:focus, input[type='password']:focus, input[type='email']:focus, input[type="float"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="float"]:focus {
 	color: var(--primary);
 	border: 2px solid var(--primary);
 	outline: none;
 }
 
 input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 25px;
-    height: 25px;
-    background: var(--input);
-    border: 2px solid var(--border);
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 25px;
+	height: 25px;
+	background: var(--input);
+	border: 2px solid var(--border);
+	border-radius: 5px;
+	cursor: pointer;
+	position: relative;
 	z-index: 1;
 	margin-right: 10px;
 }
 
 input[type="checkbox"]:checked::after {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 10px;
-    border: solid var(--input);
-    border-width: 0 2px 2px 0;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+	content: "";
+	position: absolute;
+	width: 5px;
+	height: 10px;
+	border: solid var(--input);
+	border-width: 0 2px 2px 0;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
 }
 
-input[type="checkbox"]:checked, input[type="radio"]:checked {
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
 	background: var(--primary);
 }
 
@@ -163,22 +192,22 @@ input[type="radio"] {
 }
 
 select {
-    border: 2px solid transparent;
-    color: var(--secondary);
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+	border: 2px solid transparent;
+	color: var(--secondary);
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
 }
 
 select:focus {
-    outline: none;
-    border: 2px solid var(--primary);
-	color: var(--primary)
+	outline: none;
+	border: 2px solid var(--primary);
+	color: var(--primary);
 }
 
 /* Option styling */
 option {
-    background-color: var(--card);
-    color: var(--primary);
+	background-color: var(--card);
+	color: var(--primary);
 	border: none;
 }
 
@@ -199,15 +228,15 @@ option {
 .reveal {
 	opacity: 0;
 	transform: translateY(40px);
-	transition: opacity 1s ease, transform 1s ease;
+	transition:
+		opacity 1s ease,
+		transform 1s ease;
 }
 
 .reveal.active {
 	opacity: 1;
 	transform: translateY(0);
 }
-
-
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
@@ -222,25 +251,28 @@ option {
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	
 	h1 {
 		font-size: clamp(20px, 6vw, 28px);
-		line-height:1.2;
+		line-height: 1.2;
 	}
 
 	h2 {
 		font-size: clamp(18px, 4.5vw, 22px);
-		line-height:1.25;
-	}
-	
-	h3, header a {
-		font-size: clamp(16px, 3.2vw, 18px);
-		line-height:1.3;
+		line-height: 1.25;
 	}
 
-	button, input, select, textarea {
-		font-size: clamp(15px, 2.5vw, 16px); 
-		min-height: 44px; 
+	h3,
+	header a {
+		font-size: clamp(16px, 3.2vw, 18px);
+		line-height: 1.3;
+	}
+
+	button,
+	input,
+	select,
+	textarea {
+		font-size: clamp(15px, 2.5vw, 16px);
+		min-height: 44px;
 	}
 
 	input[type="checkbox"] {

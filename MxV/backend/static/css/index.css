@@ -1,6 +1,6 @@
 /* Theme Variables */
 :root {
-	--icon-color: #38B6FF;
+	--icon-color: #38b6ff;
 }
 
 /* Main Content Styles */
@@ -82,12 +82,14 @@ main {
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
 	/* Header Styles */
-	header, #mxvlogo {
+	header,
+	#mxvlogo {
 		height: 5vh;
 	}
 
 	/* Intro Div Styles */
-	#intro-div, #dylan-bio {
+	#intro-div,
+	#dylan-bio {
 		margin-top: 0px;
 	}
 
@@ -105,19 +107,19 @@ main {
 
 	/* Card Div Styles */
 	#card-div {
-        display: flex;
-        gap: 1rem;
-        overflow-x: hidden;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;		
+		display: flex;
+		gap: 1rem;
+		overflow-x: hidden;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
 	}
 
 	#card-div .card {
-        flex: 0 0 70%;
-        scroll-snap-align: center;
-        margin-right: 0.5rem; 
-        min-width: 0;            
-    }
+		flex: 0 0 70%;
+		scroll-snap-align: center;
+		margin-right: 0.5rem;
+		min-width: 0;
+	}
 
 	#card-div .card:first-child {
 		margin-left: 15%;
@@ -127,11 +129,11 @@ main {
 		margin-right: 15%;
 	}
 
-    #card-div::-webkit-scrollbar { 
+	#card-div::-webkit-scrollbar {
 		display: none;
 	}
 
-    #card-div { 
+	#card-div {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 	}

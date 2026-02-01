@@ -33,13 +33,7 @@
 			"4.10: Liquid Pressure",
 			"4.11: Change In Momentum"
 		],
-		"5: Waves": [
-			"5.1: Wave Speed",
-			"5.2: Time Period",
-			"5.3: Maginfication"
-		],
-		"6: Magnetism": [
-			"6.1: Force"
-		]
+		"5: Waves": ["5.1: Wave Speed", "5.2: Time Period", "5.3: Maginfication"],
+		"6: Magnetism": ["6.1: Force"]
 	}
 }

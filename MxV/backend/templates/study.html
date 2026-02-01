@@ -1,63 +1,63 @@
 {% extends "joined.html" %} {% block style2 %}
 <link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/study.css') }}"
+	rel="stylesheet"
+	href="{{ url_for('static', filename='css/study.css') }}"
 />
 {% endblock %} {% block main %}
 <main>
-  <!-- Question Info -->
-  <div id="question-info" class="card">
-    <div id="question-specific-div">
-      <p id="difficulty-display">{{ question.difficulty }}</p>
-      <p>{{ question.level }}</p>
-    </div>
+	<!-- Question Info -->
+	<div id="question-info" class="card">
+		<div id="question-specific-div">
+			<p id="difficulty-display">{{ question.difficulty }}</p>
+			<p>{{ question.level }}</p>
+		</div>
 
-    {% if momentum > 0 %}
-    <h4 id="answer-status">Correct</h4>
-    {% elif momentum == 0%}
-    <h4 id="answer-status">Incorrect</h4>
-    {% endif %}
-    <p>Question {{ question_number }}</p>
-  </div>
+		{% if momentum > 0 %}
+		<h4 id="answer-status">Correct</h4>
+		{% elif momentum == 0%}
+		<h4 id="answer-status">Incorrect</h4>
+		{% endif %}
+		<p>Question {{ question_number }}</p>
+	</div>
 
-  <!-- Question Info -->
-  <div id="question-div" class="card">
-    <p id="question-text">{{ question.question_text }}</p>
+	<!-- Question Info -->
+	<div id="question-div" class="card">
+		<p id="question-text">{{ question.question_text }}</p>
 
-    <form action="/study/{{ id }}" method="post" id="answer-form">
-      {{ form.hidden_tag() }}
-      <div id="answer-div">{{ form.answer() }} {{ form.units() }}</div>
-      {% if correct == "" %} {{ form.submit() }} {% endif %}
-    </form>
+		<form action="/study/{{ id }}" method="post" id="answer-form">
+			{{ form.hidden_tag() }}
+			<div id="answer-div">{{ form.answer() }} {{ form.units() }}</div>
+			{% if correct == "" %} {{ form.submit() }} {% endif %}
+		</form>
 
-    <!-- User has answered the question -->
-    {% if correct != "" %}
-    <div id="momentum-div">
-      <h3>Momentum Gained:</h3>
-      <h3 id="momentum-gained">{{ momentum }}kgm/s</h3>
-    </div>
-    <div id="working-div">
-      <img
-        id="working-img"
-        src="{{ url_for('static', filename='images/worked_solutions/' + question.working_image_filename) }}"
-      />
-    </div>
-    <div id="next-question-div">
-      <a id="next-question" class="button" href="/study/{{ id }}">Next</a>
-    </div>
-    {% endif %}
-  </div>
+		<!-- User has answered the question -->
+		{% if correct != "" %}
+		<div id="momentum-div">
+			<h3>Momentum Gained:</h3>
+			<h3 id="momentum-gained">{{ momentum }}kgm/s</h3>
+		</div>
+		<div id="working-div">
+			<img
+				id="working-img"
+				src="{{ url_for('static', filename='images/worked_solutions/' + question.working_image_filename) }}"
+			/>
+		</div>
+		<div id="next-question-div">
+			<a id="next-question" class="button" href="/study/{{ id }}">Next</a>
+		</div>
+		{% endif %}
+	</div>
 
-  <div id="finish-task-div">
-    <a id="finish-task" href="/finish/{{ id }}">Finish Task</a>
-  </div>
+	<div id="finish-task-div">
+		<a id="finish-task" href="/finish/{{ id }}">Finish Task</a>
+	</div>
 </main>
 
 <!-- Embed momentum into HTML file -->
 <script>
-  window.appData = {
-  	momentum: {{ momentum }}
-  };
+	window.appData = {
+		momentum: {{ momentum }}
+	};
 </script>
 
 <script src="{{ url_for('static', filename='js/study.js') }}"></script>

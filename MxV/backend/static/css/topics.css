@@ -4,12 +4,14 @@
 }
 
 /* Header Styles */
-#topics, #topics:hover {
+#topics,
+#topics:hover {
 	color: var(--selected-fg);
 }
 
 /* Main Styles */
-main, form {
+main,
+form {
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
@@ -23,7 +25,8 @@ form {
 }
 
 /* Difficulty Card Styles */
-#difficulty-card, #topics-card {
+#difficulty-card,
+#topics-card {
 	width: 25vw;
 	margin-left: 5vw;
 	margin-top: 10vh;
@@ -76,7 +79,8 @@ input[type="submit"] {
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-	main, form {
+	main,
+	form {
 		flex-direction: column;
 		align-items: center;
 		padding-bottom: 5vh;
@@ -86,7 +90,8 @@ input[type="submit"] {
 		width: 90vw;
 	}
 
-	#difficulty-card, #topics-card {
+	#difficulty-card,
+	#topics-card {
 		width: 90vw;
 		margin-left: 0px;
 		margin-right: 0px;

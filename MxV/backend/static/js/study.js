@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 	const momentum = window.appData.momentum;
-	const questionInfoDisplay = document.getElementById('question-info');
+	const questionInfoDisplay = document.getElementById("question-info");
 	if (momentum == 0) {
-		questionInfoDisplay.style.backgroundColor = '#ff0011';
+		questionInfoDisplay.style.backgroundColor = "#ff0011";
 	} else if (momentum > 0) {
-		questionInfoDisplay.style.backgroundColor = 'green';
+		questionInfoDisplay.style.backgroundColor = "green";
 	}
 });

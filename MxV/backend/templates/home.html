@@ -2,93 +2,93 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
 {% endblock %} {% block main %}
 <main>
-  <!-- Top Div -->
-  <div id="top-div" class="card">
-    <div id="profile-div">
-      <img
-        id="profile-picture"
-        src="{{url_for('static', filename='images/profile_pictures/keating_pfp.png')}}"
-      />
-      <div id="profile-details-div">
-        <h3 id="username">{{ user_data.username }}</h3>
-        <h4 id="join-date">{{ user_data.join_date }}</h4>
-      </div>
-    </div>
+	<!-- Top Div -->
+	<div id="top-div" class="card">
+		<div id="profile-div">
+			<img
+				id="profile-picture"
+				src="{{url_for('static', filename='images/profile_pictures/keating_pfp.png')}}"
+			/>
+			<div id="profile-details-div">
+				<h3 id="username">{{ user_data.username }}</h3>
+				<h4 id="join-date">{{ user_data.join_date }}</h4>
+			</div>
+		</div>
 
-    <div class="vertical-bar"></div>
+		<div class="vertical-bar"></div>
 
-    <p id="bio">{{ user_data.bio }}</p>
-  </div>
+		<p id="bio">{{ user_data.bio }}</p>
+	</div>
 
-  <!-- Bottom Div -->
-  <div id="bottom-div">
-    <div id="momentum-div" class="card">
-      <h2>Momentum Breakdown</h2>
-      <div id="total-momentum-div">
-        <h4 id="total-momentum">Total Momentum:</h4>
-        <h4>{{ momentum_data.total }}kgm/s</h4>
-      </div>
+	<!-- Bottom Div -->
+	<div id="bottom-div">
+		<div id="momentum-div" class="card">
+			<h2>Momentum Breakdown</h2>
+			<div id="total-momentum-div">
+				<h4 id="total-momentum">Total Momentum:</h4>
+				<h4>{{ momentum_data.total }}kgm/s</h4>
+			</div>
 
-      <!-- Perentage filled bars -->
-      <div class="bar-div">
-        <h4 class="bar-title">Practice 1</h4>
-        <div class="bar-container">
-          <div id="practice1" class="bar"></div>
-        </div>
-      </div>
+			<!-- Perentage filled bars -->
+			<div class="bar-div">
+				<h4 class="bar-title">Practice 1</h4>
+				<div class="bar-container">
+					<div id="practice1" class="bar"></div>
+				</div>
+			</div>
 
-      <div class="bar-div">
-        <h4 class="bar-title">Practice 2</h4>
-        <div class="bar-container">
-          <div id="practice2" class="bar"></div>
-        </div>
-      </div>
+			<div class="bar-div">
+				<h4 class="bar-title">Practice 2</h4>
+				<div class="bar-container">
+					<div id="practice2" class="bar"></div>
+				</div>
+			</div>
 
-      <div class="bar-div">
-        <h4 class="bar-title">Practice 3</h4>
-        <div class="bar-container">
-          <div id="practice3" class="bar"></div>
-        </div>
-      </div>
+			<div class="bar-div">
+				<h4 class="bar-title">Practice 3</h4>
+				<div class="bar-container">
+					<div id="practice3" class="bar"></div>
+				</div>
+			</div>
 
-      <div class="bar-div">
-        <h4 class="bar-title">Exam Question 1</h4>
-        <div class="bar-container">
-          <div id="exam1" class="bar"></div>
-        </div>
-      </div>
+			<div class="bar-div">
+				<h4 class="bar-title">Exam Question 1</h4>
+				<div class="bar-container">
+					<div id="exam1" class="bar"></div>
+				</div>
+			</div>
 
-      <div class="bar-div">
-        <h4 class="bar-title">Exam Question 2</h4>
-        <div class="bar-container">
-          <div id="exam2" class="bar"></div>
-        </div>
-      </div>
-    </div>
+			<div class="bar-div">
+				<h4 class="bar-title">Exam Question 2</h4>
+				<div class="bar-container">
+					<div id="exam2" class="bar"></div>
+				</div>
+			</div>
+		</div>
 
-    <div id="stats-div" class="card">
-      <h2>Stats</h2>
-      <div id="stats-display-div">
-        <div id="stat-type-div">
-          <p class="row1">Total answers:</p>
-          <p>Accuracy:</p>
-        </div>
+		<div id="stats-div" class="card">
+			<h2>Stats</h2>
+			<div id="stats-display-div">
+				<div id="stat-type-div">
+					<p class="row1">Total answers:</p>
+					<p>Accuracy:</p>
+				</div>
 
-        <div id="stat-data-div">
-          <h4 id="total-answers" class="row1">{{ answer_data.total }}</h4>
-          <h4 id="accuracy">{{ answer_data.accuracy }}</h4>
-        </div>
-      </div>
-    </div>
-  </div>
+				<div id="stat-data-div">
+					<h4 id="total-answers" class="row1">{{ answer_data.total }}</h4>
+					<h4 id="accuracy">{{ answer_data.accuracy }}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
 </main>
 
 <!-- Embed data into HTML file -->
 <script>
-  window.appData = {
-  	id: {{ id }},
-  	momentum_data: {{ momentum_data | tojson }}
-  };
+	window.appData = {
+		id: {{ id }},
+		momentum_data: {{ momentum_data | tojson }}
+	};
 </script>
 
 <script src="{{ url_for('static', filename='js/home.js') }}"></script>

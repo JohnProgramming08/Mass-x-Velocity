@@ -1,8 +1,8 @@
 /* Global Styles */
 :root {
-	--bar: #0B0E14;
-	--bar-border: #F5F5F5;
-	--bar-fg: #38B6FF;
+	--bar: #0b0e14;
+	--bar-border: #f5f5f5;
+	--bar-fg: #38b6ff;
 	--selected-fg: #018493;
 }
 
@@ -16,7 +16,8 @@
 }
 
 /* Top and Bottom Div Styles */
-#top-div, #bottom-div {
+#top-div,
+#bottom-div {
 	width: 90%;
 	display: flex;
 }
@@ -65,7 +66,8 @@
 }
 
 /* Bottom Div Styles */
-#momentum-div, #stats-div {
+#momentum-div,
+#stats-div {
 	width: 50%;
 	height: 95%;
 	display: flex;
@@ -132,7 +134,8 @@
 		align-items: center;
 	}
 
-	#momentum-div, #stats-div {
+	#momentum-div,
+	#stats-div {
 		width: 100%;
 	}
 
@@ -143,7 +146,7 @@
 	#profile-div {
 		width: 50vw;
 	}
-	
+
 	.bar-container {
 		height: 3vh;
 	}

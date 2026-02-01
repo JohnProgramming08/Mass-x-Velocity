@@ -1,29 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const container = document.getElementById('card-div');
-	const cards = Array.from(container.querySelectorAll('.card'));
-	let index = 0
+	const container = document.getElementById("card-div");
+	const cards = Array.from(container.querySelectorAll(".card"));
+	let index = 0;
 
 	// Move to display the next card
 	function displayNextCard() {
-		if (index < 2) { // Last card should reset
+		if (index < 2) {
+			// Last card should reset
 			index++;
 			const nextCard = cards[index];
 			container.scrollTo({
 				left: nextCard.offsetLeft,
-				behavior: 'smooth'
+				behavior: "smooth",
 			});
 		} else {
 			index = 0;
 			const startCard = cards[index];
 			container.scrollTo({
 				left: startCard.offsetLeft,
-				behavior: 'smooth'
+				behavior: "smooth",
 			});
 		}
 	}
 
 	// Scroll the cards automatically
-    function autoScroll() {
+	function autoScroll() {
 		setTimeout(() => {
 			displayNextCard();
 			autoScroll();
@@ -32,9 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Is the user on mobile?
 	function isMobile() {
-		return window.matchMedia('(max-width: 768px)').matches;
+		return window.matchMedia("(max-width: 768px)").matches;
 	}
-	
+
 	if (isMobile()) {
 		autoScroll();
 	}
