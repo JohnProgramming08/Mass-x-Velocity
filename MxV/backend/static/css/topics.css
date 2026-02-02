@@ -36,7 +36,7 @@ form {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
 }
 
 h1 {
@@ -51,7 +51,7 @@ h1 {
 }
 
 .subtopic {
-	margin-left: 30px;
+	margin-left: 1.875rem;
 }
 
 input[type="submit"] {
@@ -65,7 +65,7 @@ input[type="submit"] {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 20px;
+	margin-top: 1.25rem;
 }
 
 .caret {
@@ -74,7 +74,7 @@ input[type="submit"] {
 }
 
 #error {
-	margin-bottom: 5px;
+	margin-bottom: 0.3125rem;
 }
 
 /* Mobile Styles */
@@ -93,8 +93,8 @@ input[type="submit"] {
 	#difficulty-card,
 	#topics-card {
 		width: 90vw;
-		margin-left: 0px;
-		margin-right: 0px;
+		margin-left: 0;
+		margin-right: 0;
 		margin-top: 5vh;
 	}
 }

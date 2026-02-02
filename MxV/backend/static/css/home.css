@@ -23,7 +23,7 @@
 }
 
 #top-div {
-	margin-bottom: 20px;
+	margin-bottom: 1.25rem;
 	height: 20vh;
 	align-items: center;
 }
@@ -44,7 +44,7 @@
 	width: 10vh;
 	height: 10vh;
 	border-radius: 50%;
-	margin-right: 10px;
+	margin-right: 0.625rem;
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 }
@@ -53,15 +53,15 @@
 	height: 90%;
 	display: flex;
 	flex-direction: column;
-	margin-right: 10px;
+	margin-right: 0.625rem;
 }
 
 #username {
-	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
 }
 
 #bio {
-	margin-left: 10px;
+	margin-left: 0.625rem;
 	height: 90%;
 }
 
@@ -81,12 +81,12 @@
 }
 
 #total-momentum {
-	margin-right: 10px;
+	margin-right: 0.625rem;
 }
 
 .bar-div {
 	width: 90%;
-	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
 }
 
 .bar-title {
@@ -99,7 +99,7 @@
 	width: 80%;
 	border-radius: 9999px;
 	height: 5vh;
-	margin-top: 2px;
+	margin-top: 0.125rem;
 	margin-left: 10%;
 	margin-right: 10%;
 }
@@ -140,7 +140,7 @@
 	}
 
 	#momentum-div {
-		margin-bottom: 20px;
+		margin-bottom: 1.25rem;
 	}
 
 	#profile-div {

@@ -14,24 +14,24 @@ main {
 	width: 40vw;
 	max-width: 40vw;
 	overflow-x: wrap;
-	padding-bottom: 20px;
-	border-top-right-radius: 0px;
-	border-top-left-radius: 0px;
+	padding-bottom: 1.25rem;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
 }
 
 #question-info {
 	width: 40vw;
 	max-width: 40vw;
 	margin-top: 10vh;
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 #answer-status {
-	font-size: 20px;
+	font-size: 1.2rem;
 	color: var(--primary);
 }
 
@@ -41,12 +41,12 @@ main {
 }
 
 #difficulty-display {
-	margin-right: 20px;
+	margin-right: 1.25rem;
 }
 
 #question-text {
-	margin-bottom: 30px;
-	font-size: 20px;
+	margin-bottom: 1.875rem;
+	font-size: 1.25rem;
 }
 
 /* Answer Form Styles */
@@ -62,7 +62,7 @@ input[type="submit"] {
 
 select,
 input[type="text"] {
-	height: 40px;
+	height: 2.5rem;
 }
 
 /* Question Answered Styles */
@@ -74,8 +74,8 @@ input[type="text"] {
 }
 
 #momentum-gained {
-	margin: 20px;
-	margin-right: 0px;
+	margin: 1.25rem;
+	margin-right: 0;
 }
 
 #working-div {
@@ -88,7 +88,7 @@ input[type="text"] {
 #working-img {
 	width: 50%;
 	height: auto;
-	border-radius: 30px;
+	border-radius: 1.875rem;
 }
 
 #next-question {
@@ -101,13 +101,13 @@ input[type="text"] {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	margin-top: 10px;
+	margin-top: 0.625rem;
 }
 
 /* Finish Task Styles */
 #finish-task-div {
 	width: 40vw;
-	margin-top: 5px;
+	margin-top: 0.3125rem;
 	padding-bottom: 10vh;
 	align-items: flex-start;
 	justify-content: flex-start;
@@ -135,7 +135,7 @@ input[type="text"] {
 	}
 
 	input[type="submit"] {
-		margin-top: 10px;
+		margin-top: 0.625rem;
 	}
 
 	#finish-task-div {

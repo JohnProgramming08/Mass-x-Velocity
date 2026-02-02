@@ -22,7 +22,7 @@ main {
 }
 
 #intro-image {
-	font-size: 300px;
+	font-size: 18.75rem;
 	color: var(--icon-color);
 }
 
@@ -47,8 +47,8 @@ main {
 }
 
 .card-image {
-	font-size: 50px;
-	margin-right: 10px;
+	font-size: 3.125rem;
+	margin-right: 0.625rem;
 	color: var(--icon-color);
 }
 
@@ -64,15 +64,15 @@ main {
 
 #dylan-div {
 	width: 90%;
-	margin-top: 20px;
+	margin-top: 1.25rem;
 	display: flex;
 	justify-content: center;
 }
 
 #dylan-gif {
 	width: 60%;
-	margin-right: 10px;
-	border-radius: 10px;
+	margin-right: 0.625rem;
+	border-radius: 0.625rem;
 }
 
 #dylan-title {
@@ -90,7 +90,7 @@ main {
 	/* Intro Div Styles */
 	#intro-div,
 	#dylan-bio {
-		margin-top: 0px;
+		margin-top: 0;
 	}
 
 	#intro-div {
@@ -98,11 +98,11 @@ main {
 	}
 
 	#intro-image {
-		font-size: 150px;
+		font-size: 9.375rem;
 	}
 
 	#intro-text {
-		margin-top: 0px;
+		margin-top: 0;
 	}
 
 	/* Card Div Styles */
