@@ -6,7 +6,7 @@ from .home import home_bp
 from .topics import topics_bp
 from .study import study_bp
 from .finish import finish_bp
-
+from .profile_settings import settings_bp
 
 def register_routes(app: Flask):
     app.register_blueprint(index_bp)
@@ -15,3 +15,4 @@ def register_routes(app: Flask):
     app.register_blueprint(topics_bp)
     app.register_blueprint(study_bp)
     app.register_blueprint(finish_bp)
+    app.register_blueprint(settings_bp)

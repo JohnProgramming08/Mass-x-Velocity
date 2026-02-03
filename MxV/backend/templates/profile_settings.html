@@ -1,0 +1,28 @@
+{% extends "joined.html" %}
+
+{% block style2 %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile_settings.css') }}">
+{% endblock %}
+
+{% block main %}
+<main>
+	<div class="card">
+		<h2>Profile Settings</h2>
+		<!-- Profile settings form -->
+		<form action="/profile-settings/{{ id }}" method="post" id="form" autocomplete="off">
+			{{ form.hidden_tag() }}
+			<div id="left-fields">
+				<h4>{{ form.username.label }}</h4>
+				{{ form.username() }}
+			</div>
+
+			<div id="right-fields">
+				<h4>{{ form.bio.label }}</h4>
+				{{ form.bio() }}
+			</div>
+
+			{{ form.submit() }}
+		</form>
+</div>
+</main>
+{% endblock %}

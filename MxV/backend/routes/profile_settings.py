@@ -1,4 +1,4 @@
-from flask import Blueprint, session, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for
 from forms import ProfileSettingsForm
 from services import ProfileSettingsService
 
@@ -6,7 +6,7 @@ settings_bp = Blueprint("settings", __name__)
 
 @settings_bp.route("/profile-settings/<int:id>", methods=["GET", "POST"])
 def settings(id):
-	form = ProfileSettingsForm
+	form = ProfileSettingsForm()
 
 	if not form.validate_on_submit():
 		return render_template("profile_settings.html", id=id, form=form)
@@ -17,4 +17,4 @@ def settings(id):
 	logic = ProfileSettingsService(username, bio, id)
 	logic.commit_changes()
 	
-	return render_template("home.html", id=id)
+	return redirect(url_for("home.home", id=id))
