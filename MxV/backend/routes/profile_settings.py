@@ -12,8 +12,8 @@ def settings(id):
 		return render_template("profile_settings.html", id=id, form=form)
 
 	# User has submitted a form
-	username = form.username
-	bio = form.bio
+	username = form.username.data
+	bio = form.bio.data
 	logic = ProfileSettingsService(username, bio, id)
 	logic.commit_changes()
 	

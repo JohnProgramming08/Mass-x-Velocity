@@ -83,6 +83,7 @@ h4,
 input[type="email"],
 input[type="password"],
 input[type="text"],
+textarea,
 a,
 input[type="float"] {
 	font-family: "Inter", system-ui, sans-serif;
@@ -130,6 +131,7 @@ input[type="submit"]:hover,
 
 input[type="text"],
 input[type="password"],
+textarea,
 input[type="email"],
 select,
 input[type="float"] {
@@ -141,6 +143,7 @@ input[type="float"] {
 }
 
 input[type="text"]:focus,
+textarea:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="float"]:focus {

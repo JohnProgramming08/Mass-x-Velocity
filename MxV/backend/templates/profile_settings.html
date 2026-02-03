@@ -14,14 +14,14 @@
 			<div id="left-fields">
 				<h4>{{ form.username.label }}</h4>
 				{{ form.username() }}
+
+				{{ form.submit() }}
 			</div>
 
 			<div id="right-fields">
 				<h4>{{ form.bio.label }}</h4>
 				{{ form.bio() }}
 			</div>
-
-			{{ form.submit() }}
 		</form>
 </div>
 </main>
