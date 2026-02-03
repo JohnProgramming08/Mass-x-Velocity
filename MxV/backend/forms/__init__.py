@@ -3,3 +3,4 @@ from .sign_up import SignUpForm
 from .gcse_topics import GCSETopicsForm
 from .difficulty import DifficultyForm
 from .study import StudyForm
+from .profile_settings import ProfileSettingsForm
