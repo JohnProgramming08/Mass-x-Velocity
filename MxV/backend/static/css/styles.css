@@ -41,11 +41,11 @@ header {
 	justify-content: space-around;
 }
 
-header a {
+header a, .header-link {
 	transition: 0.3s ease-in-out;
 }
 
-header a:hover {
+header a:hover, .header-link:hover {
 	font-weight: bold;
 	color: var(--border);
 }
@@ -57,6 +57,7 @@ h3,
 button,
 header a,
 .dropdown,
+.header-link,
 input[type="submit"],
 .button {
 	font-family: "Poppins", system-ui, sans-serif;

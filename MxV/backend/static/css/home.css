@@ -26,6 +26,7 @@
 	margin-bottom: 1.25rem;
 	height: 20vh;
 	align-items: center;
+	position: relative;
 }
 
 #bottom-div {
@@ -62,7 +63,13 @@
 
 #bio {
 	margin-left: 0.625rem;
-	height: 90%;
+	height: 85%;
+}
+
+#settings-link {
+	position: absolute;
+	top: 0.67rem;
+	right: 1rem;
 }
 
 /* Bottom Div Styles */
