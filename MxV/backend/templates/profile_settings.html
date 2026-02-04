@@ -23,6 +23,16 @@
 				{{ form.bio() }}
 			</div>
 		</form>
-</div>
+	</div>
 </main>
+
+<!-- Embed bio and username into HTML file -->
+<script>
+	window.appData = {
+		user_name: {{ user_name | tojson }},
+		bio: {{ bio | tojson }}
+	};
+</script>
+
+<script src="{{ url_for('static', filename='js/profile_settings.js') }}"></script>
 {% endblock %}

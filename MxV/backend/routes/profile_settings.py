@@ -9,7 +9,10 @@ def settings(id):
 	form = ProfileSettingsForm()
 
 	if not form.validate_on_submit():
-		return render_template("profile_settings.html", id=id, form=form)
+		logic = ProfileSettingsService("", "", id)
+		bio = logic.old_bio
+		username = logic.old_username
+		return render_template("profile_settings.html", id=id, form=form, bio=bio, user_name=username)
 
 	# User has submitted a form
 	username = form.username.data
