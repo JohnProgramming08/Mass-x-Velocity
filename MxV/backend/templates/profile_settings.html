@@ -11,17 +11,18 @@
 		<!-- Profile settings form -->
 		<form action="/profile-settings/{{ id }}" method="post" id="form" autocomplete="off">
 			{{ form.hidden_tag() }}
-			<div id="left-fields">
-				<h4>{{ form.username.label }}</h4>
-				{{ form.username() }}
+			<div id="form-inputs">
+				<div id="left-fields">
+					<h4>{{ form.username.label }}</h4>
+					{{ form.username() }}
+				</div>
 
-				{{ form.submit() }}
+				<div id="right-fields">
+					<h4>{{ form.bio.label }}</h4>
+					{{ form.bio() }}
+				</div>
 			</div>
-
-			<div id="right-fields">
-				<h4>{{ form.bio.label }}</h4>
-				{{ form.bio() }}
-			</div>
+			{{ form.submit() }}
 		</form>
 	</div>
 </main>

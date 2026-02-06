@@ -136,6 +136,14 @@
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
+	#top-div {
+		overflow-y: hidden;
+	}
+	
+	#bio {
+		margin-top: 3rem;
+	}
+
 	#bottom-div {
 		flex-direction: column;
 		align-items: center;

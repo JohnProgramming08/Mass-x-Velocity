@@ -14,11 +14,17 @@ h2 {
 }
 
 /* Form Styles */
-#form {
+#form, #form-inputs {
 	width: 100%;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-evenly;
+}
+
+#form {
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 #right-fields, #left-fields {
@@ -42,4 +48,21 @@ h4, #username, #bio {
 
 h4 {
 	margin-left: 0.4rem;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	.card {
+		width: 90vw;
+	}
+
+	#form-inputs {
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	#right-fields, #left-fields {
+		width: 100%;
+	}
 }
