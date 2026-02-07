@@ -49,6 +49,51 @@
 				"units": "J",
 				"working_image_filename": "GCSE_1-1_solution7.png",
 				"difficulty": "practice3"
+			},
+			{
+				"question": "A pod has a maximum speed of 15m/s. The mass of the pod is 240kg. Calculate the maximum kinetic energy of the pod.",
+				"answer": 27000,
+				"units": "J",
+				"working_image_filename": "GCSE_1-1_solution8.png",
+				"difficulty": "exam1"
+			},
+			{
+				"question": "A toy car is released from rest at position A and accelerates due to gravity down the track to position B. \nmass of toy car = 0.040kg. \nVertical height between positions A and B = 90cm. \ngravitational field strength = 9.8N/kg. \nCalculatte the maximum possible speed of the toy car as it reaches position B.",
+				"question_image_filename": "GCSE_1-1_question1.png",
+				"answer": 4.2,
+				"units": "m/s",
+				"working_image_filename": "GCSE_1-1_solution9.png",
+				"difficulty": "exam2"
+			}
+		],
+		"1.2: Gravitational Energy": [
+			{
+				"question": "A block is suspended 10m above the ground and has a mass of 2kg. What is the gravitational potential energy of the block?",
+				"answer": 196,
+				"units": "J",
+				"working_image_filename": "GCSE_1-2_solution1.png",
+				"difficulty": "practice1"
+			},
+			{
+				"question": "A ball of mass 10kg is thrown into the air. The maximum gravitational potential energy of the ball is 4900J. Calculate the maximum height of the ball.",
+				"answer": 50,
+				"units": "m",
+				"working_image_filename": "GCSE_1-2_solution2.png",
+				"difficulty": "practice2"
+			},
+			{
+				"question": "A diver has a weight of 670N and climbs a diving board 30m high. What is their gravitational potential energy on the diving board? \nGive your answer to 2 significant figures.",
+				"answer": 20000,
+				"units": "J",
+				"working_image_filename": "GCSE_1-2_solution3.png",
+				"difficulty": "practice3"
+			},
+			{
+				"question": "A pod has 24000J of gravitaional potential energy when at its maximum height. \nThe mass of the pod is 240kg. \nGravitational field strength = 9.8N/kg \n Calculate the maximum height reached by the pod.",
+				"answer": 10,
+				"units": "m",
+				"working_image_filename": "GCSE_1-2_solution4.png",
+				"difficulty": "exam1"
 			}
 		]
 	}

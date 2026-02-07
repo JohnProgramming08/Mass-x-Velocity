@@ -6,7 +6,7 @@
 ![Header](./MxV/backend/static/images/MxVdemo.png)
 
 # Key Features
-- Hundreds of man-made questions (not yet)
+- Hundreds of man-made questions
 - Worked solutions to every question
 - Stat tracking
 - Topic filters
@@ -31,3 +31,7 @@ uv run app.py
 # Contribution
 This is a personal project for my own development, so please do not attempt to contribute to it.
 
+# Notices
+Obviously there are not hundreds of questions, only like 10.
+This is because I am one college student, who is just trying to learn.
+Writing and solving a bunch of GCSE physics questions doesn't help me in any way.

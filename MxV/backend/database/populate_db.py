@@ -11,7 +11,6 @@ class Populate:
             if not question.get("image_filename"):
                 question["image_filename"] = "None"
 
-            print(question)
             new_question = Question(
                 question_text=question["question"],
                 question_image_filename=question["image_filename"],
