@@ -59,7 +59,7 @@
 			},
 			{
 				"question": "A toy car is released from rest at position A and accelerates due to gravity down the track to position B. \nmass of toy car = 0.040kg. \nVertical height between positions A and B = 90cm. \ngravitational field strength = 9.8N/kg. \nCalculatte the maximum possible speed of the toy car as it reaches position B.",
-				"question_image_filename": "GCSE_1-1_question1.png",
+				"image_filename": "GCSE_1-1_question1.png",
 				"answer": 4.2,
 				"units": "m/s",
 				"working_image_filename": "GCSE_1-1_solution9.png",

@@ -23,6 +23,11 @@
 	<!-- Question Info -->
 	<div id="question-div" class="card">
 		<p id="question-text">{{ question.question_text }}</p>
+		{% if question.question_image_filename != "None" %}
+		<div id="question-img-div">
+			<img id="question-img" src="{{ url_for('static', filename='images/question_images/' + question.question_image_filename) }}"/>
+		</div>
+		{% endif %}
 
 		<form action="/study/{{ id }}" method="post" id="answer-form" autocomplete="off">
 			{{ form.hidden_tag() }}

@@ -45,8 +45,12 @@ main {
 }
 
 #question-text {
-	margin-bottom: 1.875rem;
+	margin-bottom: 1.3rem;
 	font-size: 1.25rem;
+}
+
+#question-img-div {
+	margin-bottom: 1.875rem;
 }
 
 /* Answer Form Styles */
@@ -78,15 +82,15 @@ input[type="text"] {
 	margin-right: 0;
 }
 
-#working-div {
+#working-div, #question-img-div {
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-#working-img {
-	width: 50%;
+#working-img, #question-img {
+	width: 90%;
 	height: auto;
 	border-radius: 1.875rem;
 }

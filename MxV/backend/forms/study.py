@@ -11,6 +11,7 @@ class StudyForm(FlaskForm):
             ("kg", "kg"),
             ("N", "N"),
             ("J", "J"),
+            ("m", "m")
         ],
     )
     answer = StringField(
