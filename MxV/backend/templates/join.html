@@ -23,7 +23,7 @@
 			<h1>Welcome!</h1>
 			<p class="error">{{ sign_up_error }}</p>
 			<div class="input-div">
-				{{ sign_up_form.email() }} {{ sign_up_form.password() }}
+				{{ sign_up_form.email() }} {{ sign_up_form.password() }} {{ sign_up_form.confirm_password() }}
 			</div>
 			{{ sign_up_form.sign_up() }}
 			<button type="button" id="log-in-btn">Log In</button>

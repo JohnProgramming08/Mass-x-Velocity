@@ -6,6 +6,7 @@ class Join:
     def __init__(self, form):
         # Create user details
         self.password = form.password.data
+        self.confirm_password = form.confirm_password.data
         self.email = form.email.data
         self.username = self.email[0:5]
         self.bio = "Sorry, this feature is still in development!"
@@ -16,6 +17,7 @@ class Join:
             "has_space": "Your password must not have spaces.",
             "email_exists": "An account with this email already exists.",
             "incorrect": "Email or password is incorrect.",
+            "dont_match": "Your passwords don't match."
         }
 
     # Return the hashed password
@@ -39,14 +41,15 @@ class Join:
         found_user = Select.email_exists(self.email)
         if found_user:
             return self.error_message("email_exists")
-
+        
         # Ensure password is correct
         self.password_hash = self.hash()
         if type(self.password_hash) is not int:
             return self.error_message(self.password_hash)
+        if self.password != self.confirm_password:
+            return self.error_message("dont_match")
 
         # Successful
-        print("Signup Successful")
         id = Insert.insert_user(self.username, self.email, self.password_hash, self.bio)
         return id
 
