@@ -133,6 +133,26 @@ input[type="submit"] {
 	filter: brightness(1.05);
 }
 
+/* Validation Form Styles */
+#screen-blur {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	inset: 0;
+	position: fixed;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(2rem);
+	-webkit-backdrop-filter: blur(2rem);
+}
+
+#verification-prompt {
+	margin-bottom: 0.5rem;
+}
+
+
+
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
 	/* Header Styles */

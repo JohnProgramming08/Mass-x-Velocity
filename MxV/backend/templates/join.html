@@ -54,17 +54,23 @@
 	</div>
 
 	<div class="graphics-div" id="g2">
-		{% if validation %}
-		<form action="/join/{{ clicked }}" method="post">
-		{{ validation_form.hidden_tag() }}
-		{{ validation_form.code() }}
-		{{ validation_form.submit() }}
-		</form>
-		{% endif %}
 		<h1>Been Here Before?</h1>
 		<h4>Log in to prevent your grades from decaying!</h4>
 		<i class="fa-solid fa-radiation icon"></i>
 	</div>
+
+	<!-- Validation Form -->
+	{% if validation %}
+	<div id="screen-blur">
+		<form action="/join/{{ clicked }}" method="post" id="validation_form">
+			<h2>Verification</h2>
+			<h4 id="verification-prompt">Input the verification code we sent to your email.</h4>
+			{{ validation_form.hidden_tag() }}
+			{{ validation_form.code() }}
+			{{ validation_form.submit() }}
+		</form>
+	</div>
+	{% endif %}
 </main>
 <script src="{{ url_for('static', filename='js/join.js')}}"></script>
 {% endblock %}

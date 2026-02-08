@@ -111,13 +111,3 @@ class Join:
             Update.update_verified(id)
             return True
         return False
-
-
-            
-
-
-# Successful
-        #id = Insert.insert_user(self.username, self.email, self.password_hash, self.bio)
-        #return id
-
-# FIX BUGG OF LOGGING INTO UNAUTHORISED ACCOUNT
