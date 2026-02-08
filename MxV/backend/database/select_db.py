@@ -78,8 +78,19 @@ class Select:
 
         return questions
     
-	# Return the users authenticatio code
+	# Return the users authentication code
     @staticmethod
     def get_code(id):
         user = User.query.filter(id == User.user_id).first()
         return user.code
+    
+	# Return whether or not the user is verified
+    @staticmethod
+    def is_verified(password_hash, email):
+        found_user = User.query.filter(
+            (User.email == email) & (User.password_hash == password_hash)
+        ).first()
+        if found_user is not None:
+            return found_user.verified
+        else:
+            return False

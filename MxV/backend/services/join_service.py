@@ -22,7 +22,8 @@ class Join:
             "has_space": "Your password must not have spaces.",
             "email_exists": "An account with this email already exists.",
             "incorrect": "Email or password is incorrect.",
-            "dont_match": "Your passwords don't match."
+            "dont_match": "Your passwords don't match.",
+            "unverified": "This account is unverified."
         }
 
     # Return the hashed password
@@ -76,11 +77,14 @@ class Join:
         if type(self.password_hash) is not int:
             return self.error_message(self.password_hash)
 
-        # Get id
+        # Get id and verification status
         user_id = Select.get_id(self.email, self.password_hash)
+        verified = Select.is_verified(self.password_hash, self.email)
 
         if user_id is False:
             return self.error_message("incorrect")
+        elif verified is False:
+            return self.error_message("unverified")
         else:
             return user_id
 
