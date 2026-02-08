@@ -13,6 +13,8 @@ class User(db.Model):
     password_hash = db.Column(db.Integer)
     bio = db.Column(db.String(200), nullable=False)
     join_date = db.Column(db.DateTime, default=datetime.now)
+    verified = db.Column(db.Boolean, default=False)
+    code = db.Column(db.Integer, nullable=False)
 
     # Related tables
     stats = db.relationship(

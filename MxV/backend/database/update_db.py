@@ -38,3 +38,31 @@ class Update:
                 user_stats.exam2_momentum += momentum
 
         db.session.commit()
+    
+	# Validate the given user
+    @staticmethod
+    def validate_user(id):
+        user = User.query.filter(User.user_id == id).first()
+        user.verified = True
+        db.session.commit()
+        
+    # Update a given users password
+    @staticmethod
+    def update_password(id, password):
+        user = User.query.filter(User.user_id == id).first()
+        user.password_hash = password
+        db.session.commit()
+        
+	# Update a given users validation code
+    @staticmethod
+    def update_code(id, code):
+        user = User.query.filter(User.user_id == id).first()
+        user.code = code
+        db.session.commit()
+        
+	# Set the user to be verified
+    @staticmethod
+    def update_verified(id):
+        user = User.query.filter(User.user_id == id).first()
+        user.verified = True
+        db.session.commit()

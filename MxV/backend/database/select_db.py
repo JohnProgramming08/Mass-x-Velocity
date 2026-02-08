@@ -5,11 +5,7 @@ class Select:
     # Return whether or not a user with the given email exists
     @staticmethod
     def email_exists(email):
-        found_email = User.query.filter(User.email == email).first()
-        if found_email is None:
-            return False
-
-        return True
+        return User.query.filter(User.email == email).first()
 
     # Return the users id
     @staticmethod
@@ -81,3 +77,9 @@ class Select:
             questions.append(question)
 
         return questions
+    
+	# Return the users authenticatio code
+    @staticmethod
+    def get_code(id):
+        user = User.query.filter(id == User.user_id).first()
+        return user.code

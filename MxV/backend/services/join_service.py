@@ -1,12 +1,17 @@
 import hashlib
-from database import Select, Insert
-
+from database import Select, Insert, Update
+from random import randint
+import smtplib
+from email.message import EmailMessage
 
 class Join:
     def __init__(self, form):
         # Create user details
         self.password = form.password.data
-        self.confirm_password = form.confirm_password.data
+        try:
+            self.confirm_password = form.confirm_password.data
+        except:
+            pass
         self.email = form.email.data
         self.username = self.email[0:5]
         self.bio = "Sorry, this feature is still in development!"
@@ -36,10 +41,10 @@ class Join:
         return self.password_hash
 
     # Create a new user account and return the users id
-    def signup(self):
+    def signup_verification(self):
         # Ensure email is not already taken
         found_user = Select.email_exists(self.email)
-        if found_user:
+        if found_user is not None and found_user.verified:
             return self.error_message("email_exists")
         
         # Ensure password is correct
@@ -48,9 +53,20 @@ class Join:
             return self.error_message(self.password_hash)
         if self.password != self.confirm_password:
             return self.error_message("dont_match")
-
-        # Successful
-        id = Insert.insert_user(self.username, self.email, self.password_hash, self.bio)
+        
+		# Ensure that the email actually exists
+        code = randint(100000, 999999)
+        id = self.store_unverified_account(found_user, code)
+        msg = EmailMessage()
+        msg["Subject"] = "Verify your email"
+        msg["From"] = "mxv.auth@gmail.com"
+        msg["To"] = self.email
+        msg.set_content(f"Your authentication code: {code}")
+        
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+            smtp.login("mxv.auth@gmail.com", "haqk hvje taix neux")
+            smtp.send_message(msg)
+        
         return id
 
     # Return the id of the user
@@ -63,7 +79,6 @@ class Join:
         # Get id
         user_id = Select.get_id(self.email, self.password_hash)
 
-        print(user_id)
         if user_id is False:
             return self.error_message("incorrect")
         else:
@@ -72,3 +87,33 @@ class Join:
     # Return the appropriate error message
     def error_message(self, error):
         return self.errors[error]
+    
+    # Store an unverified account
+    def store_unverified_account(self, user, code):
+        if user is None:
+            id = Insert.insert_user(self.username, self.email, self.password_hash, self.bio, code)
+
+        else:
+            Update.update_password(user.user_id, self.password_hash)
+            Update.update_code(user.user_id, code)
+            id = user.user_id
+        return id
+    
+    # Verify the users email
+    @staticmethod
+    def verify(id, code):
+        correct_code = Select.get_code(id)
+        if int(code.data) == correct_code:
+            Update.update_verified(id)
+            return True
+        return False
+
+
+            
+
+
+# Successful
+        #id = Insert.insert_user(self.username, self.email, self.password_hash, self.bio)
+        #return id
+
+# FIX BUGG OF LOGGING INTO UNAUTHORISED ACCOUNT

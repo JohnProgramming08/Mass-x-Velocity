@@ -11,6 +11,7 @@ database.db.init_app(app)
 
 with app.app_context():
     database.db.create_all()
+    
 
 
 register_routes(app)

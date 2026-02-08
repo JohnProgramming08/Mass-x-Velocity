@@ -54,6 +54,13 @@
 	</div>
 
 	<div class="graphics-div" id="g2">
+		{% if validation %}
+		<form action="/join/{{ clicked }}" method="post">
+		{{ validation_form.hidden_tag() }}
+		{{ validation_form.code() }}
+		{{ validation_form.submit() }}
+		</form>
+		{% endif %}
 		<h1>Been Here Before?</h1>
 		<h4>Log in to prevent your grades from decaying!</h4>
 		<i class="fa-solid fa-radiation icon"></i>
