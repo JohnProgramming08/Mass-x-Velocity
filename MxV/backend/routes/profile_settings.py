@@ -9,7 +9,7 @@ def settings(id):
 	form = ProfileSettingsForm()
 
 	if not form.validate_on_submit():
-		logic = ProfileSettingsService("", "", id)
+		logic = ProfileSettingsService("", "", "", id)
 		bio = logic.old_bio
 		username = logic.old_username
 		return render_template("profile_settings.html", id=id, form=form, bio=bio, user_name=username)
@@ -17,7 +17,9 @@ def settings(id):
 	# User has submitted a form
 	username = form.username.data
 	bio = form.bio.data
-	logic = ProfileSettingsService(username, bio, id)
+	image = form.profile_picture.data
+
+	logic = ProfileSettingsService(username, bio, image, id)
 	logic.commit_changes()
 	
 	return redirect(url_for("home.home", id=id))

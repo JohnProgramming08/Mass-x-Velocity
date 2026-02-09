@@ -11,6 +11,8 @@ def home(id):
     user_data = service.user_data()
     answer_data = service.answer_data()
     momentum_data = service.momentum_data()
+    profile_picture = service.profile_picture()
+    
 
     return render_template(
         "home.html",
@@ -18,4 +20,5 @@ def home(id):
         answer_data=answer_data,
         momentum_data=momentum_data,
         id=id,
+        profile_picture=profile_picture
     )

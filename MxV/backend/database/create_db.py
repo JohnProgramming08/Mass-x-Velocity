@@ -15,6 +15,7 @@ class User(db.Model):
     join_date = db.Column(db.DateTime, default=datetime.now)
     verified = db.Column(db.Boolean, default=False)
     code = db.Column(db.Integer, nullable=False)
+    profile_picture = db.Column(db.String(255), default="keating_pfp.png")
 
     # Related tables
     stats = db.relationship(

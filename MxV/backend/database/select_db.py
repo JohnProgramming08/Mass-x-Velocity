@@ -94,3 +94,9 @@ class Select:
             return found_user.verified
         else:
             return False
+        
+	# Return the users profile picture path
+    @staticmethod
+    def get_profile_picture(id):
+        user = User.query.filter(User.user_id == id).first()
+        return user.profile_picture

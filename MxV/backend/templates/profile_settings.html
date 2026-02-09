@@ -9,12 +9,13 @@
 	<div class="card">
 		<h2>Profile Settings</h2>
 		<!-- Profile settings form -->
-		<form action="/profile-settings/{{ id }}" method="post" id="form" autocomplete="off">
+		<form action="/profile-settings/{{ id }}" method="post" id="form" autocomplete="off" enctype="multipart/form-data">
 			{{ form.hidden_tag() }}
 			<div id="form-inputs">
 				<div id="left-fields">
 					<h4>{{ form.username.label }}</h4>
 					{{ form.username() }}
+					{{ form.profile_picture() }}
 				</div>
 
 				<div id="right-fields">

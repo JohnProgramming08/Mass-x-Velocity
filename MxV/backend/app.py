@@ -6,6 +6,7 @@ import database
 # Initial setup
 app = Flask(__name__)
 app.secret_key = "SHHH"
+app.config["MAX_CONTENT_LENGTH"] = 5 * 1000 * 1000
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 database.db.init_app(app)
 

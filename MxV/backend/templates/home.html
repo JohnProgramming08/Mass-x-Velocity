@@ -7,7 +7,7 @@
 		<div id="profile-div">
 			<img
 				id="profile-picture"
-				src="{{url_for('static', filename='images/profile_pictures/keating_pfp.png')}}"
+				src="{{url_for('static', filename='images/profile_pictures/' + profile_picture)}}"
 			/>
 			<div id="profile-details-div">
 				<h3 id="username">{{ user_data.username }}</h3>

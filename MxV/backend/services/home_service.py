@@ -40,3 +40,7 @@ class Home:
     # Return the users general data
     def user_data(self):
         return Select.get_user_data(self.id)
+    
+	# Return the users profile picture file path
+    def profile_picture(self):
+        return Select.get_profile_picture(self.id)

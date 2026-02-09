@@ -66,3 +66,12 @@ class Update:
         user = User.query.filter(User.user_id == id).first()
         user.verified = True
         db.session.commit()
+        
+	# Update the users profile picture
+    @staticmethod
+    def update_profile_picture(id, path):
+        user = User.query.filter(User.user_id == id).first()
+        user.profile_picture = path
+        db.session.commit()
+        
+		
