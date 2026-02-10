@@ -29,4 +29,8 @@ class ProfileSettingsService:
 		path = os.path.join("static/images/profile_pictures/", filename)
 		self.image.save(path)
 		
+		# Delete the old profile picture and store the path of the new one
+		old_path = Select.get_profile_picture(self.id)
+		if path != "keating_pfp.png": # Default profile picture
+			os.remove(f"static/images/profile_pictures/{old_path}")
 		Update.update_profile_picture(self.id, filename)
