@@ -41,7 +41,11 @@ input, textarea {
 	width: 80%;
 }
 
-h4, #username, #bio {
+input[type="file"]::file-selector-button {
+	width: 9rem;
+}
+
+h4, #username, #bio, #profile_picture {
 	width: 90%;
 	text-align: left;
 }
