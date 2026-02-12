@@ -1,0 +1,24 @@
+{% extends "intro.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/intro.css')}}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+{% endblock %}
+
+{% block main %}
+<main>
+	<form action="/reset" method="post" id="email-form">
+		{{ email_form.hidden_tag() }}
+		{{ email_form.email() }}
+		{{ email_form.submit_email() }}
+	</form>
+
+	{% if code_sent %}
+	<form action ="/reset" method="post" id="code-form">
+		{{ code_form.hidden_tag() }}
+		{{ code_form.code() }}
+		{{ code_form.submit() }}
+	</form>
+	{% endif %}
+</main>
+{% endblock %}

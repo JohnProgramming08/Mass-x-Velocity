@@ -6,5 +6,5 @@ class ResetForm(FlaskForm):
 	email = EmailField(
         "Email", render_kw={"placeholder": "Email"}, validators=[DataRequired()]
     )
-	submit = SubmitField("Submit")
+	submit_email = SubmitField("Submit")
 
