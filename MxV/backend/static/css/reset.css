@@ -48,3 +48,21 @@ input[type="submit"] {
 	height: 2rem;
 	margin-top: 0.8rem;
 }
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	/* Header Styles */
+	header,
+	#mxvlogo {
+		height: 5vh;
+	}
+
+	/* Form Styles */
+	#email-form {
+		width: 90vw;
+	}
+
+	input {
+		width: 50vw;
+	}
+}
