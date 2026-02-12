@@ -40,7 +40,7 @@
 			<h1>Welcome Back!</h1>
 			<p class="error">{{ log_in_error }}</p>
 			<div class="input-div">
-				{{ log_in_form.email() }} {{ log_in_form.password() }} <a href="/reset">Forgotten your password?</a>
+				{{ log_in_form.email() }} {{ log_in_form.password() }} <a href="/reset" id="reset">Forgotten your password?</a>
 			</div>
 			{{ log_in_form.log_in() }}
 			<button type="button" id="sign-up-btn">Sign Up</button>

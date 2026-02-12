@@ -18,9 +18,6 @@ class Reset:
 
 	# Reset the users password
 	def reset_password(self, input_code):
-		print("----------------CODE------------")
-		print(self.code)
-		print(int(input_code))
 		# User input wrong code
 		if self.code != int(input_code):
 			return False

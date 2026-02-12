@@ -7,18 +7,24 @@
 
 {% block main %}
 <main>
-	<form action="/reset" method="post" id="email-form">
+	<form action="/reset" method="post" id="email-form" class="card">
+		<h2>Password Reset</h2>
+		<h4>Enter your email to reset your password.</h4>
 		{{ email_form.hidden_tag() }}
 		{{ email_form.email() }}
 		{{ email_form.submit_email() }}
 	</form>
 
 	{% if code_sent %}
-	<form action ="/reset" method="post" id="code-form">
-		{{ code_form.hidden_tag() }}
-		{{ code_form.code() }}
-		{{ code_form.submit() }}
-	</form>
+	<div id="screen-blur">
+		<form action ="/reset" method="post" id="code-form">
+			<h2>Verification</h2>
+			<h4 id="verification-prompt">Input the verification code we sent to your email.</h4>
+			{{ code_form.hidden_tag() }}
+			{{ code_form.code() }}
+			{{ code_form.submit() }}
+		</form>
+	</div>
 	{% endif %}
 </main>
 {% endblock %}
