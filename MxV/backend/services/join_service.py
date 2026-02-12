@@ -1,8 +1,7 @@
 import hashlib
 from database import Select, Insert, Update
 from random import randint
-import smtplib
-from email.message import EmailMessage
+from .email_service import EmailService
 
 class Join:
     def __init__(self, form):
@@ -56,17 +55,8 @@ class Join:
             return self.error_message("dont_match")
         
 		# Ensure that the email actually exists
-        code = randint(100000, 999999)
+        code = EmailService.send_verification_email(self.email)
         id = self.store_unverified_account(found_user, code)
-        msg = EmailMessage()
-        msg["Subject"] = "Verify your email"
-        msg["From"] = "mxv.auth@gmail.com"
-        msg["To"] = self.email
-        msg.set_content(f"Your authentication code: {code}")
-        
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login("mxv.auth@gmail.com", "haqk hvje taix neux")
-            smtp.send_message(msg)
         
         return id
 
