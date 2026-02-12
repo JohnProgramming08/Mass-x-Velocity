@@ -100,3 +100,9 @@ class Select:
     def get_profile_picture(id):
         user = User.query.filter(User.user_id == id).first()
         return user.profile_picture
+
+	# Return the id of a user with a given email
+    @staticmethod
+    def get_email_id(email):
+        user = User.query.filter(User.email == email).first()
+        return user.user_id

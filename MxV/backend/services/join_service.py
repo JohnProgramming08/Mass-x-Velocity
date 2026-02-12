@@ -1,7 +1,8 @@
 import hashlib
 from database import Select, Insert, Update
 from random import randint
-from .email_service import EmailService
+from .email_service import Email
+from .hash_service import Hash
 
 class Join:
     def __init__(self, form):
@@ -27,17 +28,7 @@ class Join:
 
     # Return the hashed password
     def hash(self):
-        if self.password == "":
-            return "empty_password"
-
-        elif " " in self.password:
-            return "has_space"
-
-        full_hashed_password = int(
-            hashlib.sha256(self.password.encode("utf-8")).hexdigest(), 16
-        )
-        self.password_hash = full_hashed_password % (10**8)
-
+        self.password_hash = Hash.hash_password(self.password)
         return self.password_hash
 
     # Create a new user account and return the users id
@@ -55,7 +46,8 @@ class Join:
             return self.error_message("dont_match")
         
 		# Ensure that the email actually exists
-        code = EmailService.send_verification_email(self.email)
+        email_system = Email(self.email)
+        code = email_system.send_verification_email()
         id = self.store_unverified_account(found_user, code)
         
         return id

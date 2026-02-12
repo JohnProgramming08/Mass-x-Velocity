@@ -74,4 +74,9 @@ class Update:
         user.profile_picture = path
         db.session.commit()
         
-		
+	# Update the users password
+    @staticmethod
+    def update_password(id, new_password):
+        user = User.query.filter(User.user_id == id).first()
+        user.password_hash = new_password
+        db.session.commit()

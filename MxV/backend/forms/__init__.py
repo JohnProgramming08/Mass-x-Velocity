@@ -5,3 +5,4 @@ from .difficulty import DifficultyForm
 from .study import StudyForm
 from .profile_settings import ProfileSettingsForm
 from .validation import ValidationForm
+from .reset import ResetForm
