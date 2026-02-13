@@ -41,12 +41,13 @@ h4 {
 
 /* Input Styles */
 input {
-	width: 20vw; 
+	width: 20vw;
+	margin-bottom: 0.25rem; 
 }
 
 input[type="submit"] {
 	height: 2rem;
-	margin-top: 0.8rem;
+	margin-top: 0.55rem;
 }
 
 /* Mobile Styles */

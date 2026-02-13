@@ -27,6 +27,6 @@ class Email:
     # Send a password reset email, returning the reset code
     def send_password_reset_email(self):
         code = randint(100000, 999999)
-        self.__send_email("Reset your password", f"Enter this code to reset your password to 'BlackButler': {code}")
+        self.__send_email("Reset your password", f"Enter this code to reset your password: {code}")
 
         return code

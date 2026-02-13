@@ -80,3 +80,10 @@ class Update:
         user = User.query.filter(User.user_id == id).first()
         user.password_hash = new_password
         db.session.commit()
+        
+	# Update the users temporary password
+    @staticmethod
+    def update_temporary_password(id, new_password):
+        user = User.query.filter(User.user_id == id).first()
+        user.temporary_password_hash = new_password
+        db.session.commit()

@@ -6,7 +6,7 @@ class Select:
     @staticmethod
     def email_exists(email):
         return User.query.filter(User.email == email).first()
-
+            
     # Return the users id
     @staticmethod
     def get_id(email, password_hash):
@@ -106,3 +106,9 @@ class Select:
     def get_email_id(email):
         user = User.query.filter(User.email == email).first()
         return user.user_id
+    
+	# Return the temporary password of the user
+    @staticmethod
+    def get_temporary_password(id):
+        user = User.query.filter(id == User.user_id).first()
+        return user.temporary_password_hash

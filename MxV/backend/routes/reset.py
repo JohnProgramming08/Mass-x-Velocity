@@ -15,7 +15,7 @@ def reset():
 	# User has submitted the code form
 	if code_form.validate_on_submit():
 		email = session["email"]
-		service = Reset(email)
+		service = Reset(email, "", "")
 		code = code_form.code.data
 		valid_code = service.reset_password(code)
 
@@ -27,9 +27,18 @@ def reset():
 
 	# User has submitted the email form
 	if email_form.validate_on_submit():
+		# Get form data
 		email = email_form.email.data
+		password = email_form.new_password.data
+		confirm_password = email_form.confirm_password.data
+
 		session["email"] = email
-		service = Reset(email)
-		service.send_email()
-		return render_template("reset.html", email_form=email_form, code_form=code_form, code_sent=True)
-	
+		service = Reset(email, password, confirm_password)
+		# Passwords match
+		match = service.passwords_match()
+		if match is True:
+			service.send_email()
+			return render_template("reset.html", email_form=email_form, code_form=code_form, code_sent=True)
+		
+		# Passwords don't match
+		return render_template("reset.html", email_form=email_form, error=match)
