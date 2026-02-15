@@ -24,7 +24,8 @@ class Update:
         user_stats = Stats.query.filter(Stats.user_id == user_id).first()
         user_stats.total_answers += 1
         user_stats.total_momentum += momentum
-
+        
+        # Add the right difficulty of momentum
         match difficulty:
             case "practice1":
                 user_stats.practice1_momentum += momentum
@@ -86,4 +87,25 @@ class Update:
     def update_temporary_password(id, new_password):
         user = User.query.filter(User.user_id == id).first()
         user.temporary_password_hash = new_password
+        db.session.commit()
+
+    # Update the users title
+    @staticmethod
+    def update_title(id):
+        user_stats = Stats.query.filter(Stats.user_id == id).first()
+        user = User.query.filter(User.user_id == id).first()
+
+        titles = {
+            0: "Curious",
+            100: "Observer",
+            300: "Experimenter",
+            700: "Analyst",
+            1500: "Theorist",
+            3100: "Innovator",
+            6700: "Laureate"
+        }
+
+        for key in titles:
+            if user_stats.total_momentum >= key:
+                user.title = titles[key]
         db.session.commit()

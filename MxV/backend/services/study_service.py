@@ -40,6 +40,7 @@ class Study:
         if float(user_answer) == answer and user_units == units:
             momentum = self.calculate_momentum(question)
             Update.update_correct_answer(self.user_id, momentum, question.difficulty)
+            Update.update_title(self.user_id)
             return momentum
 
         # User got incorrect answer

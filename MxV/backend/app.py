@@ -11,7 +11,11 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 database.db.init_app(app)
 
 with app.app_context():
-    database.db.create_all()
+    try:
+        database.db.create_all()
+        database.Populate.populate_questions()
+    except:
+        pass
     
 
 

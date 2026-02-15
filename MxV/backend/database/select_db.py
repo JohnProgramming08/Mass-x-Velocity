@@ -49,6 +49,7 @@ class Select:
             "username": user_stats.username,
             "bio": user_stats.bio,
             "join_date": user_stats.join_date.strftime("%x"),
+            "title": user_stats.title
         }
 
     # Return a list of questions filtered by topic
@@ -112,3 +113,9 @@ class Select:
     def get_temporary_password(id):
         user = User.query.filter(id == User.user_id).first()
         return user.temporary_password_hash
+    
+    # Return the users title
+    @staticmethod
+    def get_title(id):
+        user = User.query.filter(id == User.id).first()
+        return user.title

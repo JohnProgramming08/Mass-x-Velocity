@@ -16,6 +16,7 @@ class User(db.Model):
     verified = db.Column(db.Boolean, default=False)
     code = db.Column(db.Integer, nullable=False)
     profile_picture = db.Column(db.String(255), default="keating_pfp.png")
+    title = db.Column(db.String(67), default="Curious")
     temporary_password_hash = db.Column(db.Integer, default=67)
 
     # Related tables

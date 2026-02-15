@@ -1,6 +1,4 @@
-import hashlib
 from database import Select, Insert, Update
-from random import randint
 from .email_service import Email
 from .hash_service import Hash
 
@@ -14,7 +12,7 @@ class Join:
             pass
         self.email = form.email.data
         self.username = self.email[0:5]
-        self.bio = "Sorry, this feature is still in development!"
+        self.bio = "This sigma has been too busy aura farming to write a bio <3"
 
         # Possible errors and their messages
         self.errors = {
@@ -92,4 +90,5 @@ class Join:
         if int(code.data) == correct_code:
             Update.update_verified(id)
             return True
+        
         return False
