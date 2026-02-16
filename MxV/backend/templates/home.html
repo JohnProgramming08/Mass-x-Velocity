@@ -68,18 +68,27 @@
 			</div>
 		</div>
 
-		<div id="stats-div" class="card">
-			<h2>Stats</h2>
-			<div id="stats-display-div">
-				<div id="stat-type-div">
-					<p class="row1">Total answers:</p>
-					<p>Accuracy:</p>
-				</div>
+		<!-- Right Div -->
+		<div id="right-div">
+			<div id="stats-div" class="card">
+				<h2>Stats</h2>
+				<div id="stats-display-div">
+					<div id="stat-type-div">
+						<p class="row1">Total answers:</p>
+						<p>Accuracy:</p>
+					</div>
 
-				<div id="stat-data-div">
-					<h4 id="total-answers" class="row1">{{ answer_data.total }}</h4>
-					<h4 id="accuracy">{{ answer_data.accuracy }}</h4>
+					<div id="stat-data-div">
+						<h4 id="total-answers" class="row1">{{ answer_data.total }}</h4>
+						<h4 id="accuracy">{{ answer_data.accuracy }}</h4>
+					</div>
 				</div>
+			</div>
+
+			<!-- Achievements Div -->
+			<div id="achievements-div" class="card">
+				<h2>Achievements</h2>
+				<div id="achievements-table"></div>
 			</div>
 		</div>
 	</div>
@@ -89,7 +98,9 @@
 <script>
 	window.appData = {
 		id: {{ id }},
-		momentum_data: {{ momentum_data | tojson }}
+		momentum_data: {{ momentum_data | tojson }},
+		user_data: {{ user_data | tojson }},
+		answer_data: {{ answer_data | tojson }}
 	};
 </script>
 

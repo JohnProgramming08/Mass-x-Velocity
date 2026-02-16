@@ -41,7 +41,7 @@
 	width: 20vw;
 }
 
-#profile-picture {
+#profile-picture, .achievement-img {
 	width: 10vh;
 	height: 10vh;
 	border-radius: 50%;
@@ -117,8 +117,18 @@
 	border-radius: 9999px;
 }
 
+/* Right Div Styles */
+#right-div {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+
 #stats-div {
-	width: 30%;
+	width: 25vw;
 	height: 35%;
 }
 
@@ -132,6 +142,28 @@
 
 .row1 {
 	margin-bottom: 10px;
+}
+
+/* Achievement Div Styles */
+#achievements-div {
+	width: 90%;
+	margin-top: 1.25rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#achievements-table {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 0.67rem;
+}
+
+.achievement-img {
+	width: 100%;
+	height: auto;
 }
 
 /* Mobile Styles */
@@ -149,8 +181,13 @@
 		align-items: center;
 	}
 
+	#right-div {
+		width: 100%;
+	}
+
 	#momentum-div,
-	#stats-div {
+	#stats-div,
+	#achievements-div {
 		width: 100%;
 	}
 
