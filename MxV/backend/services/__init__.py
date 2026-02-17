@@ -5,3 +5,4 @@ from .topics_service import Topics
 from .study_service import Study
 from .profile_settings_service import ProfileSettingsService
 from .reset_service import Reset
+from .leaderboard_service import Leaderboard
