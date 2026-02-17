@@ -27,16 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	const achievements = [
 		["Getting Started", answerData.total >= 1, "getting_started.jpg"],
 		["Dedicated Student", answerData.total >= 100, "dedicated_student.jpg"],
-		["Seriously?", answerData.total >= 1000, "seriously.png"],
-		["Sigma", momentumData.total >= 67, "sigma.png"],
-		["Exam Prepped", momentumData.exam2 >= 100, "exam_prepped.png"]
+		["Seriously?", answerData.total >= 1000, "seriously.jpg"],
+		["Sigma", momentumData.total >= 67, "sigma.jpg"],
+		["Exam Prepped", momentumData.exam2 >= 100, "exam_prepped.jpg"]
 	];
 
 	// Display all of the users achievements
 	function displayAchievements() {
 		for (const achievement of achievements) {
 			if (achievement[1]) {
-				const temp = `<img class="achievement-img" src="/static/images/achievements/${achievement[2]}"/>`
+				const temp = `<img class="achievement-img" title="${achievement[0]}" src="/static/images/achievements/${achievement[2]}"/>`
 				achievementsTable.innerHTML += temp;			
 			}
 		}
