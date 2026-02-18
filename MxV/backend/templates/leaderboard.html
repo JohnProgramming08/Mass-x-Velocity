@@ -1,0 +1,30 @@
+{% extends "joined.html" %}
+{% block style2 %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/leaderboard.css') }}" />
+{% endblock %}
+
+{% block main %}
+<main>
+	<div class="card" id="leaderboard-div">
+		<h2 id="leaderboard-title">Leaderboard</h2>
+		<!-- Leaderboard -->
+		<table id="leaderboard-table">
+			<tr>
+				<th><h4>Position</h4></th>
+				<th><h4>Title</h4></th>
+				<th><h4>Username</h4></th>
+				<th><h4>Momentum</h4></th>
+			</tr>
+
+			{% for user in top_users %}
+			<tr>
+				<td><p>{{ loop.index }}</p></td>
+				<td><p>{{ user.title }}</p></td>
+				<td><p>{{ user.username }}</p></td>
+				<td><p>{{ user.total_momentum }}</p></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</main>
+{% endblock %}

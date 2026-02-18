@@ -123,15 +123,15 @@ class Select:
     # Get the first 10 users ranked by momentum
     @staticmethod
     def get_top_users():
-        top_users = Stats.order_by(Stats.total_momentum.desc()).limit(10).all()
+        top_users = Stats.query.order_by(Stats.total_momentum.desc()).limit(10).all()
         
         user_data = []
         for user in top_users:
             user_data.append({
-                "username": user.username,
+                "username": user.user.username,
                 "total_momentum": user.total_momentum,
-                "title": user.title,
-                "profile_picture": user.profile_picture
+                "title": user.user.title,
+                "profile_picture": user.user.profile_picture
             })
         
         return user_data
