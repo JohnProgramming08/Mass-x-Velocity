@@ -1,21 +1,21 @@
 import smtplib
 from email.message import EmailMessage
 from random import randint
+import requests
 
 class Email:
     def __init__(self, email):
         self.email = email
+        self.url = "https://script.google.com/macros/s/AKfycbxp-s2-BmnDOVYeU7PqnhchIJqTNnM3p8UfENAm6QxRAxVtb6FJRyZ-SD7wY9KUcM8I/exec"
 
     def __send_email(self, subject, content):
-        msg = EmailMessage()
-        msg["Subject"] = subject
-        msg["From"] = "mxv.auth@gmail.com"
-        msg["To"] = self.email
-        msg.set_content(content)
+        data = {
+            "to": self.email,
+            "subject": subject,
+            "body": content
+        }
         
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login("mxv.auth@gmail.com", "haqk hvje taix neux")
-            smtp.send_message(msg)
+        r = requests.post(self.url, json=data)
 
 	# Send a verification email, returning the verification code
     def send_verification_email(self):
