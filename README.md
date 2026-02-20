@@ -27,12 +27,6 @@ source .venv/bin/activate
 uv run app.py
 ```
 
-# Production Notice
-The service I am using to host the site does not allow for outgoing SMTP transmissions.
-You should log in with the details:
-email: dylan08code@gmail.com
-password: password
-
 # Contribution
 This is a personal project for my own development, so please do not attempt to contribute to it.
 
