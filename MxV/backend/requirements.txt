@@ -4,6 +4,10 @@ black==26.1.0
     # via mxv
 blinker==1.9.0
     # via flask
+certifi==2026.1.4
+    # via requests
+charset-normalizer==3.4.4
+    # via requests
 click==8.3.1
     # via
     #   black
@@ -21,6 +25,8 @@ flask-wtf==1.2.2
     # via mxv
 greenlet==3.3.1 ; platform_machine == 'AMD64' or platform_machine == 'WIN32' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'ppc64le' or platform_machine == 'win32' or platform_machine == 'x86_64'
     # via sqlalchemy
+idna==3.11
+    # via requests
 itsdangerous==2.2.0
     # via
     #   flask
@@ -43,12 +49,16 @@ platformdirs==4.9.2
     # via black
 pytokens==0.4.1
     # via black
+requests==2.32.5
+    # via mxv
 sqlalchemy==2.0.46
     # via
     #   flask-sqlalchemy
     #   mxv
 typing-extensions==4.15.0
     # via sqlalchemy
+urllib3==2.6.3
+    # via requests
 werkzeug==3.1.6
     # via
     #   flask
